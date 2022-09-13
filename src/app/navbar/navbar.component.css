@@ -169,6 +169,7 @@ transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
         left: 30px;
     }
 .nav-links{
+    position: fixed!important;
     top: 0;
     left: 0;
     position: absolute;
@@ -206,7 +207,7 @@ transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
     width: 40px;
     transition-delay: 0.125s;
 }
-  .toggle.mobile-menu span:nth-child(2){
+ .toggle.mobile-menu span:nth-child(2){
     transform: translateY(0px) rotate(315deg);
     width: 40px;
     transition-delay: 0.25s;
@@ -218,6 +219,7 @@ transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
 
   .navbar .toggle{
     display: flex;
+    position: fixed;
   }
 
   
