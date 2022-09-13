@@ -70,8 +70,22 @@ font-weight: 600;
 
 /* button */
 
-.navbarbutton{
+.nav-links button {
     margin-left: 100px;
+    border-radius: 34px;
+    border: none;
+    background-color: transparent;
+}
+
+.navbarbutton{
+padding: 10px;
+border-radius: 34px;
+background:linear-gradient(90deg, #66c0c0,#66c0c0, #fff) ;
+text-transform: uppercase;
+font-size: 18px;
+letter-spacing: 2px;
+font-weight: 500;
+
 }
 
 /* media queries */
@@ -121,7 +135,8 @@ font-weight: 600;
   }
 
   
-.navbarbutton{
+.nav-links button {
+    margin-top: 40px;
     margin-left: 0;
 }
 }
