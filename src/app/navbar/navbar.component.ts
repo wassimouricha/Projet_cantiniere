@@ -1,5 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
-import { faBars} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
 
 declare function togglebutton():any;
@@ -11,6 +11,7 @@ declare function togglebutton():any;
 export class NavbarComponent implements OnInit {
   // je crée une variable pour l'icone fabars pouvant etre appelé dans le html 
   bars = faBars;
+  cart = faCartShopping;
 
   constructor() { 
   }

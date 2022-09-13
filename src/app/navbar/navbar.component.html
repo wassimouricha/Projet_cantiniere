@@ -1,3 +1,4 @@
+<!-- import de la police d'écriture -->
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
 <nav class="navbar">
@@ -6,12 +7,17 @@
         <ul>
             <li ><a href="#" class="activelist">Plats de la Semaine</a></li>
             <li><a href="#">Carte</a></li>
-            <button ><a href="#" class="navbarbutton">Se  Connecter</a> </button>
+                <a href="#"><button type="button" class=" btn--border btn-read btn--animated">Se  Connecter</button></a>
+                    <!-- pour appeler une icone fontawesome en html angular -->
+                <a href="#"><button type="button" class=" btn--border btn-read btn--animated"><fa-icon [icon]="cart"></fa-icon></button></a>
         </ul>
-       
     </div>
-    <!-- pour appeler une icone fontawesome en html angular -->
-        <div> <fa-icon [icon]="bars" class="menuhamburger"></fa-icon></div>
+
+        <div class="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 </nav>
 
 
