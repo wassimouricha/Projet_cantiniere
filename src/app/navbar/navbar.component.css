@@ -73,7 +73,7 @@ font-weight: 600;
 .toggle{
     display: none;
     position: absolute;
-    top: 50px;
+    top: 40px;
     right: 30px;
     cursor: pointer;
     width: 70px;
