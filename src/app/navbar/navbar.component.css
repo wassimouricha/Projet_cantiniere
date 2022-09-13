@@ -68,7 +68,11 @@ font-weight: 600;
 
 }
 
+/* button */
 
+.navbarbutton{
+    margin-left: 100px;
+}
 
 /* media queries */
 
@@ -115,4 +119,9 @@ font-weight: 600;
   .navbar .menuhamburger{
     display: block;
   }
+
+  
+.navbarbutton{
+    margin-left: 0;
+}
 }
