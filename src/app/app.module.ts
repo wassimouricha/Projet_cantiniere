@@ -11,6 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CarteComponent } from './components/carte/carte.component';
+import { RouterModule,Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+
+
+const appRoute: Routes = [
+  {path: '', redirectTo:'Home', pathMatch:'full' },
+  {path: 'Home', component: HomeComponent},
+  {path: 'Cartes', component: CarteComponent},
+]
 
 @NgModule({
   declarations: [
@@ -18,16 +28,20 @@ import { CarteComponent } from './components/carte/carte.component';
     NavbarComponent,
     CardweekComponent,
     DialogContentComponent,
-    CarteComponent
+    CarteComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    // pour les routes
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }

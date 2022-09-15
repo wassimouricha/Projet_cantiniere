@@ -2,11 +2,11 @@
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
 <nav class="navbar">
-    <a href="#" class="logo">CANTINIÈRE</a>
+    <a routerLink="/Home" class="logo">CANTINIÈRE</a>
     <div class="nav-links">
         <ul>
             <li ><a href="#" class="activelist">Plats de la Semaine</a></li>
-            <li><a href="#">Carte</a></li>
+            <li><a routerLink="/Cartes">Carte</a></li>
                 <a href="#"><button type="button" class=" btn--border btn-read btn--animated">Se  Connecter</button></a>
                     <!-- pour appeler une icone fontawesome en html angular -->
                 <a href="#"><button type="button" class=" btn--border btn-read btn--animated"><fa-icon [icon]="cart"></fa-icon></button></a>
@@ -19,5 +19,6 @@
             <span></span>
         </div>
 </nav>
+
 
 
