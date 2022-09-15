@@ -55,6 +55,7 @@
     text-decoration: none;
     color: #66c0c0;
     padding: 0 10px;
+    cursor: pointer;
 }
 .card .content a::after{
 content: "";
