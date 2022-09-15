@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogContentComponent } from '../dialog/components/dialog-content/dialog-content.component';
+
 
 @Component({
   selector: 'app-cardweek',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardweekComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
+
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentComponent, {
+      data: { title: 'Jour de la semaine'}
+    });
+
+    dialogRef.afterClosed().subscribe(
+      result => console.log('dialog result', result)
+    );
+  }
+
 
 }
