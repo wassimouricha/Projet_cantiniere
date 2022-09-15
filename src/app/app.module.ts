@@ -8,8 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardweekComponent } from './cardweek/cardweek.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DialogComponent } from './dialog/dialog.component';
-import { DialogContentComponent } from './dialog/components/dialog-content/dialog-content.component';
+import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppComponent,
     NavbarComponent,
     CardweekComponent,
-    DialogComponent,
     DialogContentComponent
   ],
   imports: [
