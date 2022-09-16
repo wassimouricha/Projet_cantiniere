@@ -51,8 +51,10 @@ body{
     justify-content: center;
 
 }
-
-.nav-links ul li .activelist{
+.nav-links ul li a{
+    transition:  0.25s ease-in-out;
+}
+.nav-links ul li a:hover{
 color: #66c0c0;
 font-weight: 600;
     
