@@ -14,6 +14,7 @@ import { CarteComponent } from './components/carte/carte.component';
 import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DialogConnexionComponent } from './components/dialog-connexion/dialog-connexion.component';
+import { InscriptionComponent } from './components/inscription/inscription.component';
 
 
 
@@ -21,6 +22,7 @@ const appRoute: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full' },
   {path: 'Home', component: HomeComponent},
   {path: 'Cartes', component: CarteComponent},
+  {path: 'Inscription', component: InscriptionComponent},
 ]
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoute: Routes = [
     DialogContentComponent,
     CarteComponent,
     HomeComponent,
-    DialogConnexionComponent
+    DialogConnexionComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
