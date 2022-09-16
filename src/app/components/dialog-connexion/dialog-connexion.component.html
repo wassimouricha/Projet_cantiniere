@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>{{ data?.title }}</h2>
+
+<div mat-dialog-content>
+     <!-- création du boucle pour afficher un bouton radio tant qu'il y à une donnée dans le tableau dans dialog-content.component.ts  -->
+     <div  class="radio_dialog">
+          <div class="radioselect">
+               <label for="" class="labelradio">Login : </label>
+               <input type="text" name="login"  class="input" >
+          </div>
+        
+     </div>
+     <div  class="radio_dialog">
+          <div class="radioselect">
+               <label for="" class="labelradio">Mot de passe : </label>
+               <input type="text" name="mdp"  class="input">
+          </div>
+        
+     </div>
+
+
+<div mat-dialog-actions class="bottomdialog">
+    <button mat-button mat-dialog-close type="button" class=" btn--border btn-read btn--animated">Se connecter</button>
+    <button mat-button [mat-dialog-close]="'FERMER'" type="button" class=" btn--border btn-read btn--animated">Créer un compte</button>
+</div>
+<div mat-dialog-actions class="bottomdialog">
+    <button mat-button mat-dialog-close type="button" class=" btn--border btn-read btn--animated">Annuler</button>
+    <button mat-button [mat-dialog-close]="'FERMER'" type="button" class=" btn--border btn-read btn--animated">Mot de passe oublié</button>
+</div>
+

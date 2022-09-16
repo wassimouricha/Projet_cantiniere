@@ -1,5 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { faBars, faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import { DialogConnexionComponent } from '../dialog-connexion/dialog-connexion.component';
+import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 
 
 declare function togglebutton():any;
@@ -13,8 +16,19 @@ export class NavbarComponent implements OnInit {
   bars = faBars;
   cart = faCartShopping;
 
-  constructor() { 
+  constructor(public dialog: MatDialog) { 
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogConnexionComponent, {
+      data: { title: 'Connexion'}
+    });
+
+    dialogRef.afterClosed().subscribe(
+      result => console.log('dialog result', result)
+    );
+  }
+
 
   ngOnInit(): void {
     togglebutton();

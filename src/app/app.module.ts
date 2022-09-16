@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CarteComponent } from './components/carte/carte.component';
 import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { DialogConnexionComponent } from './components/dialog-connexion/dialog-connexion.component';
 
 
 
@@ -29,7 +30,8 @@ const appRoute: Routes = [
     CardweekComponent,
     DialogContentComponent,
     CarteComponent,
-    HomeComponent
+    HomeComponent,
+    DialogConnexionComponent
   ],
   imports: [
     BrowserModule,
