@@ -8,26 +8,21 @@ function togglebutton(){
         togglemenu.classList.toggle('mobile-menu') 
     })
 }
-// fonction pour le panier
-// function openCart(){
-//     const cartIcon = document.querySelector(".cart-icon");
-//     const cart = document.querySelector(".cart");
-//     const closeCart = document.querySelector(".close-cart");
 
-//     cartIcon.addEventListener('click' , () => {
-//         cart.classList.add('active');
-//     })
+if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded" , ready);
+} else {
+    ready();
+}
 
-//     closeCart.addEventListener('click' , () => {
-//         cart.classList.remove('active');
-//     })
-// }
+// making function
 
-
-// let cartIcon = document.querySelector(".cart-icon");
-// let cart = document.querySelector(".cart");
-// let closeCart = document.querySelector(".close-cart");
-
-// cartIcon.onClick = () => {
-//     cart.classList.add("active")
-// }
+function ready(){
+    // supprimer produit du panier
+    var removeCartButtons = document.getElementsByClassName('cart-remove')
+    console.log(removeCartButtons)
+    for(var i = 0; i < removeCartButtons.length; i++){
+        var button = removeCartButtons[i]
+        button.addEventListener('click' ,removeCartItem);
+    }
+}

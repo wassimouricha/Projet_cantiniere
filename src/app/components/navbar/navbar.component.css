@@ -233,8 +233,9 @@ font-size: 1rem;
 }
 
 .cart-remove{
-font-size: 24;
-color: red;
+    font-size: 24;
+    color: red;
+    cursor: pointer;
 }
 
 .total{
