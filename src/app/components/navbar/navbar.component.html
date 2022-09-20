@@ -10,7 +10,7 @@
             <a routerLink="/Cartes" ><button type="button" class=" btn--border btn-read btn--animated">Carte</button></a>
                 <a (click)="openDialog()"><button type="button" class=" btn--border btn-read btn--animated">Se  Connecter</button></a>
                     <!-- pour appeler une icone fontawesome en html angular -->
-                <a href="#"><button type="button" class=" btn--border btn-read btn--animated"><fa-icon [icon]="cart"></fa-icon></button></a>
+                <button (click)="openCart()" type="button" class=" btn--border btn-read btn--animated cart-icon" ><fa-icon [icon]="cart" ></fa-icon></button>
         </ul>
     </div>
     <!-- panier -->
@@ -36,7 +36,7 @@
             <!-- bouton acheter -->
             <button type="button" class="btn-buy">Payer</button>
             <!-- fermer le panier -->
-            <a href="#"><fa-icon [icon]="close" id="close-cart"></fa-icon></a>
+            <a><fa-icon [icon]="close" class="close-cart"></fa-icon></a>
         </div>
         <!-- togglebutton -->
         <div class="toggle">

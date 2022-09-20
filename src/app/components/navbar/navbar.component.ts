@@ -2,7 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { faBars, faCartShopping, faClose, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { DialogConnexionComponent } from '../dialog-connexion/dialog-connexion.component';
-import { DialogContentComponent } from '../dialog-content/dialog-content.component';
+
 
 
 declare function togglebutton():any;
@@ -30,6 +30,22 @@ export class NavbarComponent implements OnInit {
       result => console.log('dialog result', result)
     );
   }
+
+  openCart(){
+    const cartIcon = document.querySelector(".cart-icon");
+    const cart = document.querySelector(".cart");
+    const closeCart = document.querySelector(".close-cart");
+
+    cartIcon!.addEventListener('click' , () => {
+        cart!.classList.add('active');
+    })
+
+    closeCart!.addEventListener('click' , () => {
+        cart!.classList.remove('active');
+    })
+}
+  
+
 
 
   ngOnInit(): void {
