@@ -1,6 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { faBars, faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping, faClose, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { DialogConnexionComponent } from '../dialog-connexion/dialog-connexion.component';
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 
@@ -15,6 +15,8 @@ export class NavbarComponent implements OnInit {
   // je crée une variable pour l'icone fabars pouvant etre appelé dans le html 
   bars = faBars;
   cart = faCartShopping;
+  trash = faTrash;
+  close = faClose;
 
   constructor(public dialog: MatDialog) { 
   }
