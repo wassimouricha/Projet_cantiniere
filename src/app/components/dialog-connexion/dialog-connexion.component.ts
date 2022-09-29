@@ -7,8 +7,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./dialog-connexion.component.css']
 })
 export class DialogConnexionComponent implements OnInit {
-
-  form = {
+  // any car pas de type
+  form: any = {
     login: null,
     password: null
   }
