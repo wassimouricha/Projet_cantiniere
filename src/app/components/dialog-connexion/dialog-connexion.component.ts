@@ -8,8 +8,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DialogConnexionComponent implements OnInit {
 
-  form: any = {
-    email: null,
+  form = {
+    login: null,
     password: null
   }
 
