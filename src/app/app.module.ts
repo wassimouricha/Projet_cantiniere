@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { DialogConnexionComponent } from './components/dialog-connexion/dialog-connexion.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { HttpClientModule }  from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -41,7 +42,9 @@ const appRoute: Routes = [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    FormsModule,
     BrowserAnimationsModule,
+    // module pour faire des requetes à l'api rest
     HttpClientModule,
     MatDialogModule,
     // pour les routes

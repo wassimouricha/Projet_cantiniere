@@ -8,10 +8,21 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DialogConnexionComponent implements OnInit {
 
+  form: any = {
+    email: null,
+    password: null
+  }
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
+
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    console.log(this.form);
+    
   }
 
 }
