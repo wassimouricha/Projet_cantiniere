@@ -15,6 +15,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DialogConnexionComponent } from './components/dialog-connexion/dialog-connexion.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
+import { HttpClientModule }  from '@angular/common/http'
 
 
 
@@ -34,13 +35,14 @@ const appRoute: Routes = [
     CarteComponent,
     HomeComponent,
     DialogConnexionComponent,
-    InscriptionComponent
+    InscriptionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatDialogModule,
     // pour les routes
     RouterModule.forRoot(appRoute)
@@ -50,3 +52,8 @@ const appRoute: Routes = [
   exports: [RouterModule]
 })
 export class AppModule { }
+
+export class ApiService {
+  API_KEY = '';
+}
+
