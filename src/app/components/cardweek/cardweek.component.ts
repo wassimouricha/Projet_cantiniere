@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
@@ -10,7 +11,14 @@ import { DialogContentComponent } from '../dialog-content/dialog-content.compone
 })
 export class CardweekComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private client: HttpClient ) { 
+      let users =  client.get('http://localhost:8080/stone.lunchtime/user/findall').forEach((value)=>{
+        console.log(value)
+      });
+      
+  
+
+  }
 
   ngOnInit(): void {
   }

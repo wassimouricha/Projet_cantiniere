@@ -15,7 +15,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DialogConnexionComponent } from './components/dialog-connexion/dialog-connexion.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
-import { HttpClientModule }  from '@angular/common/http'
+import { HttpClient, HttpClientModule }  from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 
 
@@ -54,9 +54,8 @@ const appRoute: Routes = [
   bootstrap: [AppComponent],
   exports: [RouterModule]
 })
-export class AppModule { }
+export class AppModule {
 
-export class ApiService {
-  API_KEY = '';
-}
+
+ }
 

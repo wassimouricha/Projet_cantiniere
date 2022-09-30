@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -13,7 +14,10 @@ export class DialogConnexionComponent implements OnInit {
     password: null
   }
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any , private http: HttpClient ) { 
+
+
+  }
 
 
 
@@ -22,7 +26,12 @@ export class DialogConnexionComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.form);
-    
+    this.http.post('http://localhost:8080/stone.lunchtime/user/findall', this.form).subscribe(
+      data => console.log(data),
+      err => console.log(err)
+      
+      
+    )
   }
 
 }
