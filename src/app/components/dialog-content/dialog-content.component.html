@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>{{ data?.title }}</h2>
+
+<div mat-dialog-content>
+     <!-- création du boucle pour afficher un bouton radio tant qu'il y à une donnée dans le tableau dans dialog-content.component.ts  -->
+     <div *ngFor="let pl of plat" class="radio_dialog">
+          <div class="radioselect">
+               <input type="radio" name="Plat" id="{{ pl.id }}" value="{{ pl.value}}" ngModel>
+               <label for="" class="labelradio">{{ pl.value}}</label>
+          </div>
+          <div>
+               <div *ngFor="let tp of type" class="typechoice">
+                    <input type="radio" name="Type" id="{{ tp.id }}" value="{{ tp.value}}" ngModel>
+                    <label for="" class="souslabelradio">{{ tp.value }}</label>
+                    
+               </div>
+          </div>
+          <input type="number" placeholder="Quantité" class="inputnumber">
+               <button type="button" class=" btn--border btn-read btn--animated">Ajouter au panier</button>
+     </div>
+</div>
+
+<div mat-dialog-actions class="bottomdialog">
+    <button mat-button mat-dialog-close type="button" class=" btn--border btn-read btn--animated">Fermer</button>
+    <button mat-button [mat-dialog-close]="'FERMER'" type="button" class=" btn--border btn-read btn--animated">confirmer</button>
+</div>
