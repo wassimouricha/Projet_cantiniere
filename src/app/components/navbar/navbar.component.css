@@ -18,7 +18,8 @@ body{
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    margin: 50px;
+    padding: 20px;
+
 }
 
 .navbar a {
@@ -63,7 +64,7 @@ body{
     transition:  0.25s ease-in-out;
 }
 .nav-links ul li a:hover{
-color: #66c0c0;
+color: #ffb827;
 font-weight: 600;
     
 }
@@ -73,7 +74,7 @@ font-weight: 600;
     position: absolute;
     width: 35px;
     font-size: 35px;
-    color: #66c0c0;
+    color: #ffb827;
     top: 50px;
     right: 30px;
     cursor: pointer;
@@ -100,7 +101,7 @@ font-weight: 600;
     position: absolute;
     width: 40px;
     height: 4px;
-    background: #66c0c0;
+    background: #ffb827;
     border-radius: 4px;
     transition: 0.5s;
 }
@@ -132,7 +133,7 @@ font-weight: 600;
     padding: 15px 30px;
     overflow: hidden;
     z-index: 1;
-    color: #66c0c0;
+    color: #ffb827;
     background-color: #0d0d0d;
     border: none;
     font-weight: 600;
@@ -146,11 +147,11 @@ font-weight: 600;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #66c0c0;
+    background-color: #ffb827;
     transform: scaleX(0);
     transform-origin: 0 50%;
     transition-property: transform;
-    transition-duration: 2s;
+    transition-duration: 0.5s;
     transition-timing-function: ease-out;
     z-index: -1;
 }
@@ -202,7 +203,7 @@ row-gap: 0.5rem;
 
 .cart-quantity{
 border: 1px solid black;
-outline-color: #66c0c0;
+outline-color: #ffb827;
 width: 2.4rem;
 text-align: center;
 font-size: 1rem;
@@ -255,7 +256,7 @@ font-size: 1rem;
     margin: 1.5rem auto 0 auto;
     padding: 12px 20px;
     border: none;
-    background: #66c0c0;
+    background: #ffb827;
     color: white;
     font-size: 1rem;
     font-weight: 500;
@@ -276,7 +277,7 @@ font-size: 1rem;
     top: 1rem;
     right: 0.8rem;
     font-size: 2rem;
-    color: #66c0c0;
+    color: #ffb827;
     cursor: pointer;
 }
 /* media queries */

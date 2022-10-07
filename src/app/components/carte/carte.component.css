@@ -58,14 +58,14 @@
     font-family: 'Poppins';
     list-style: none;
     text-decoration: none;
-    color: #66c0c0;
+    color: #ffb827;
     padding: 0 10px;
     cursor: default;
 }
 .card .content a::after{
 content: "";
 position: absolute;
-background-color: #66c0c0;
+background-color: #ffb827;
 height: 3px;
 width: 0;
 left: 0;
@@ -84,6 +84,12 @@ transition: 0.3s;
     }
     
     
+}
+
+@media screen and (max-width: 900px) {
+    .container{
+        padding: 70px 40px;
+    }
 }
 
 @media screen and (max-width: 650px) {

@@ -20,6 +20,8 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
+
 const appRoute: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full' },
   {path: 'Home', component: HomeComponent},
@@ -57,5 +59,5 @@ const appRoute: Routes = [
 export class AppModule {
 
 
- }
+}
 
