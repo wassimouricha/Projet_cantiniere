@@ -15,7 +15,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DialogConnexionComponent } from './components/dialog-connexion/dialog-connexion.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
-import { HttpClient, HttpClientModule }  from '@angular/common/http'
+import { HttpClientModule }  from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 
 
