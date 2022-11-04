@@ -22,13 +22,6 @@ import { FormsModule } from '@angular/forms';
 
 
 
-const appRoute: Routes = [
-  {path: '', redirectTo:'Home', pathMatch:'full' },
-  {path: 'Home', component: HomeComponent},
-  {path: 'Cartes', component: CarteComponent},
-  {path: 'Inscription', component: InscriptionComponent},
-]
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,8 +42,6 @@ const appRoute: Routes = [
     // module pour faire des requetes à l'api rest
     HttpClientModule,
     MatDialogModule,
-    // pour les routes
-    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent],
