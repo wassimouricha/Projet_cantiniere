@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppelService } from './appel.service';
+import { MenuService } from './menu.service';
 import { Menu } from './menu';
 
 // voici comment se compose un component
@@ -18,12 +19,14 @@ export class AppComponent {
 
   menu: Menu[] = [
     {
-      title: "titre",
-      content: "contenu"
+      title: "string",
+      day:"string",
+      plat1: "string",
+      plat2: "string",
     }
   ];
 
-  constructor(private  menuService: AppelService){}
+  constructor( private menuService : MenuService, private  appelService: AppelService){}
 
   ngOnInit() : void {
     console.log("app chargé");
@@ -32,12 +35,14 @@ export class AppComponent {
     
     
     // this.tasks = this.taskService.getTask();
-    this.menuService.getTask()
+    this.appelService.getTask()
     .subscribe((todos: any[]) => {
       this.menu = todos.map<Menu>((todo: any) => {
         return {
           title: todo.title,
-          done: todo.done,
+          day: todo.day,
+          plat1: todo.plat1,
+          plat2: todo.plat2,
         }
       })
     })

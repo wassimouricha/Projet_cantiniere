@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Menu } from '../menu';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  menu: Menu[] = [
+    {
+      title: "string",
+      day:"string",
+      plat1: "string",
+      plat2: "string",
+    }
+  ];
+
+  constructor( private menuService : MenuService,) { }
 
   ngOnInit(): void {
+        this.menu = this.menuService.getMenu();
   }
 
 }

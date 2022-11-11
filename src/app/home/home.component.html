@@ -3,7 +3,10 @@
 <app-navbar></app-navbar>
 <!-- End of Navbar -->
 <!-- Card -->
-<app-cardweek></app-cardweek> 
+<div class="container">
+    <app-cardweek  *ngFor="let menu of menu"  [menu]="menu"></app-cardweek> 
+</div>
+
 <!-- End of Card -->
 
 

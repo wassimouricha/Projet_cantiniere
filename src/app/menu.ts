@@ -1,6 +1,8 @@
 export type Menu = {
     title: string;
-    content?: string;
-    done?:Boolean;
+    day:string;
+    plat1: string;
+    plat2: string;
+
 
 }
