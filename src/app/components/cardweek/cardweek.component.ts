@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Menu } from 'src/app/modal/menuweek/menu';
+import { MenuService } from 'src/app/modal/menuweek/menu.service';
+
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 
 
@@ -10,13 +13,10 @@ import { DialogContentComponent } from '../dialog-content/dialog-content.compone
   styleUrls: ['./cardweek.component.css']
 })
 export class CardweekComponent implements OnInit {
+  @Input() menu!: Menu;
+  constructor(  private menuService : MenuService,public dialog: MatDialog, private client: HttpClient ) { 
 
-  constructor(public dialog: MatDialog, private client: HttpClient ) { 
-      let users =  client.get('http://localhost:8080/stone.lunchtime/user/findall').forEach((value)=>{
-        console.log(value)
-      });
-      
-  
+    console.log("constructeur");
 
   }
 
