@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AppelService } from './appel.service';
-import { MenuService } from './menu.service';
-import { Menu } from './menu';
+
+import { Menu } from './modal/menuweek/menu';
+import { MenuService } from './modal/menuweek/menu.service';
 
 // voici comment se compose un component
 

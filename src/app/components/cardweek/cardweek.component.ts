@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Menu } from 'src/app/menu';
-import { MenuService } from 'src/app/menu.service';
+import { Menu } from 'src/app/modal/menuweek/menu';
+import { MenuService } from 'src/app/modal/menuweek/menu.service';
+
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 
 

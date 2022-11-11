@@ -17,6 +17,7 @@ import { DialogConnexionComponent } from './components/dialog-connexion/dialog-c
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { HttpClientModule }  from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
 
 
 
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     DialogConnexionComponent,
     InscriptionComponent,
+    CarteContenuComponent,
   ],
   imports: [
     BrowserModule,

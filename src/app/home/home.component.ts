@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from '../menu';
-import { MenuService } from '../menu.service';
+import { Menu } from '../modal/menuweek/menu';
+import { MenuService } from '../modal/menuweek/menu.service';
+
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor( private menuService : MenuService,) { }
+  constructor( private menuService : MenuService) { }
 
   ngOnInit(): void {
         this.menu = this.menuService.getMenu();
