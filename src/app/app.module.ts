@@ -15,17 +15,13 @@ import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DialogConnexionComponent } from './components/dialog-connexion/dialog-connexion.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
-import { HttpClient, HttpClientModule }  from '@angular/common/http'
+import { HttpClientModule }  from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
 
 
 
-const appRoute: Routes = [
-  {path: '', redirectTo:'Home', pathMatch:'full' },
-  {path: 'Home', component: HomeComponent},
-  {path: 'Cartes', component: CarteComponent},
-  {path: 'Inscription', component: InscriptionComponent},
-]
+
 
 @NgModule({
   declarations: [
@@ -37,6 +33,7 @@ const appRoute: Routes = [
     HomeComponent,
     DialogConnexionComponent,
     InscriptionComponent,
+    CarteContenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,8 +44,6 @@ const appRoute: Routes = [
     // module pour faire des requetes à l'api rest
     HttpClientModule,
     MatDialogModule,
-    // pour les routes
-    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -57,5 +52,5 @@ const appRoute: Routes = [
 export class AppModule {
 
 
- }
+}
 
