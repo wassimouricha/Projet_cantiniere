@@ -21,6 +21,7 @@ export class CardweekComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   
