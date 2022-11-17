@@ -18,6 +18,7 @@ import { InscriptionComponent } from './components/inscription/inscription.compo
 import { HttpClientModule }  from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
+import { DialogPasswordComponent } from './components/dialog-password/dialog-password.component';
 
 
 
@@ -34,6 +35,7 @@ import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
     DialogConnexionComponent,
     InscriptionComponent,
     CarteContenuComponent,
+    DialogPasswordComponent,
   ],
   imports: [
     BrowserModule,
