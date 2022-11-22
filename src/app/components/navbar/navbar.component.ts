@@ -1,6 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { faBars, faCartShopping, faClose, faTrash} from '@fortawesome/free-solid-svg-icons';
+import { TokenService } from 'src/app/services/token.service';
 import { DialogConnexionComponent } from '../dialog-connexion/dialog-connexion.component';
 
 
@@ -18,7 +19,7 @@ export class NavbarComponent implements OnInit {
   trash = faTrash;
   close = faClose;
 
-  constructor(public dialog: MatDialog) { 
+  constructor(public dialog: MatDialog , public tokenService : TokenService ) { 
   }
 
   openDialog() {
@@ -47,10 +48,11 @@ export class NavbarComponent implements OnInit {
   
 
 
-
+  firstname = ""
 
   ngOnInit(): void {
     togglebutton();
+    this.firstname = this.tokenService.getUserInfo().firstname
   }
 
 }
