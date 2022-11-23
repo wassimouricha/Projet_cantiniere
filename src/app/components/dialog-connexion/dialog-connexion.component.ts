@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { Login } from 'src/app/model/auth';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-dialog-connexion',
@@ -9,12 +12,16 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DialogConnexionComponent implements OnInit {
   // any car pas de type
-  form: any = {
-    login: null,
-    password: null
+  form: Login = {
+    email: '',
+    password: ''
   }
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any , private http: HttpClient ) { 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any , 
+  private http: HttpClient, 
+  private authService : AuthService , 
+  private matDialog : MatDialog , 
+  private tokenService : TokenService) { 
 
 
   }
@@ -24,14 +31,19 @@ export class DialogConnexionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+// fonction pour se connecter a l'api
   onSubmit(): void {
-    console.log(this.form);
-    this.http.post('http://localhost:8080/stone.lunchtime/user/findall', this.form).subscribe(
-      data => console.log(data),
-      err => console.log(err)
-      
-      
-    )
+      this.authService.login(this.form).subscribe(
+        data => {
+          console.log(data.headers.get('Authorization'));
+          //@ts-ignore
+        this.tokenService.saveToken(data.headers.get('Authorization'))
+        }
+      )
+        // fermer la boite de dialog
+         this.matDialog.closeAll();
   }
+
+  
 
 }
