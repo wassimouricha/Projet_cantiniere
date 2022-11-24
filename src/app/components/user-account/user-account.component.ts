@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-user-account',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserAccountComponent implements OnInit {
 
-  constructor() { }
+firstname = "";
+name = "";
+email = "";
+
+  constructor( public tokenService : TokenService ) { }
 
   openCart(){
     const cartIcon = document.querySelector(".cart-icon");
@@ -24,6 +29,12 @@ export class UserAccountComponent implements OnInit {
 }
 
   ngOnInit(): void {
+    // Prénom
+    this.firstname = this.tokenService.getUserInfo().firstname
+    // Nom
+    this.name = this.tokenService.getUserInfo().name
+    // Adresse Email
+    this.email = this.tokenService.getUserInfo().email
   }
 
 }
