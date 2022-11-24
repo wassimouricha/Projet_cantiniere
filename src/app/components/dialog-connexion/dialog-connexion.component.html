@@ -26,29 +26,16 @@ name="form"
                          <div  *ngIf="password.errors['minlength']">Le mot de passe doit etre de minimum 5 caractères !</div>
                     </div>
 
-               </div>                
-          </div>
-          <!-- <div  class="radio_dialog">
-               <div class="radioselect">
-                    <label for="password" class="labelradio">Mot de passe : </label>
-                    <input type="password" name="mdp" class="input" [(ngModel)]="form.password" #password="ngModel" required minlength="5" placeholder="Mot de passe">
-                    <div class="form_error" *ngIf="password.errors && f.submitted">
-                         <div  *ngIf="password.errors['required']">Le mot de passe est requis !</div>
-                         <div  *ngIf="password.errors['minlength']">Le mot de passe doit etre de minimum 5 caractères !</div>
-                    </div>
-
-               </div>             
-          </div> -->
-     
-     
-          <div mat-dialog-actions class="bottomdialog">
-          <button  class=" btn--border btn-read btn--animated">Se connecter</button>
-          <button mat-button mat-dialog-close routerLink="/Inscription" type="button" class=" btn--border btn-read btn--animated">Créer un compte</button>
-          </div>
-          <div mat-dialog-actions class="bottomdialog">
-          <button mat-button mat-dialog-close type="button" class=" btn--border btn-read btn--animated">Annuler</button>
-          <button mat-button mat-dialog-close routerLink="/RegenPassword" type="button" class=" btn--border btn-read btn--animated">Mot de passe oublié</button>
+               </div>  
+               
+               <div mat-dialog-actions class="bottomdialog">
+                    <button  class=" btn--border btn-read btn--animated">Se connecter</button>
+                    <button mat-button mat-dialog-close routerLink="/Inscription" type="button" class=" btn--border btn-read btn--animated">Créer un compte</button>
+               </div>
+               <div mat-dialog-actions class="bottomdialog">
+                    <button mat-button mat-dialog-close type="button" class=" btn--border btn-read btn--animated">Annuler</button>
+                    <button mat-button mat-dialog-close routerLink="/RegenPassword" type="button" class=" btn--border btn-read btn--animated">Mot de passe oublié</button>
+               </div>
           </div>
      </div>
-     
 </form>
