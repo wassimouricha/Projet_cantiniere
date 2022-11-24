@@ -16,7 +16,7 @@
 
 .radio_dialog{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 10px;
     padding: 10px;
     justify-content: space-between;
@@ -61,6 +61,20 @@ margin: 5px;
 .bottomdialog{
     display: flex;
     justify-content: space-between;
+}
+
+/* Inputs */
+.radio_dialog .input {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bbbcbd;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-size: 1rem;
+    outline: none;
 }
 
 
