@@ -1,3 +1,7 @@
+<div class="close">
+     <button mat-button mat-dialog-close type="button" class="btn--border btn-read btn--animated"><fa-icon [icon]="close" ></fa-icon></button>
+</div>
+
 <h2 mat-dialog-title>{{ data?.title }}</h2>
 <form 
 name="form" 
@@ -33,7 +37,6 @@ name="form"
                     <button mat-button mat-dialog-close routerLink="/Inscription" type="button" class=" btn--border btn-read btn--animated">Créer un compte</button>
                </div>
                <div mat-dialog-actions class="bottomdialog">
-                    <button mat-button mat-dialog-close type="button" class=" btn--border btn-read btn--animated">Annuler</button>
                     <button mat-button mat-dialog-close routerLink="/RegenPassword" type="button" class=" btn--border btn-read btn--animated">Mot de passe oublié</button>
                </div>
           </div>
