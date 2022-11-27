@@ -5,7 +5,7 @@
     <a routerLink="/Home" class="logo">CANTINIÈRE</a>
     <div class="nav-links">
         <ul>
-            <!-- <a class="welcome__nav" *ngIf="tokenService.isLogged()">Bonjour {{ firstname }} </a> -->
+            <a class="welcome__nav" *ngIf="tokenService.isLogged()">Bonjour {{ firstname }} </a>
             <a class="welcome__nav" *ngIf="!tokenService.isLogged()">Vous n'êtes pas connecté </a>
             <a routerLink="/Home"><button type="button" class=" btn--border btn-read btn--animated">Plats de la Semaine</button></a>
             <a routerLink="/Cartes" ><button type="button" class=" btn--border btn-read btn--animated">Carte</button></a>

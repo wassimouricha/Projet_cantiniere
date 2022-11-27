@@ -18,7 +18,6 @@ import { InscriptionComponent } from './components/inscription/inscription.compo
 import { HttpClientModule }  from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
-import { DialogPasswordComponent } from './components/dialog-password/dialog-password.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 
 
@@ -36,7 +35,6 @@ import { UserAccountComponent } from './components/user-account/user-account.com
     DialogConnexionComponent,
     InscriptionComponent,
     CarteContenuComponent,
-    DialogPasswordComponent,
     UserAccountComponent,
   ],
   imports: [
