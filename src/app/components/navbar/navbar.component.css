@@ -67,7 +67,6 @@ body {
   right: 30px;
   cursor: pointer;
 }
-
 .toggle {
   display: none;
   position: absolute;
@@ -83,7 +82,6 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
 .toggle span {
   position: absolute;
   width: 40px;
@@ -92,7 +90,6 @@ body {
   border-radius: 4px;
   transition: 0.5s;
 }
-
 .toggle span:nth-child(1) {
   transform: translateY(-15px);
   width: 25px;
@@ -112,7 +109,6 @@ body {
   background-color: transparent;
   transition: color 0.4s linear;
 }
-
 .btn-read {
   position: relative;
   font-family: 'Poppins';
@@ -123,15 +119,6 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
-
-/* .btn-read::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 70%;
-    height: 3px;
-    background: #ffb827;
-} */
 .btn--animated::before {
     content: "";
     position: absolute;
@@ -147,30 +134,7 @@ body {
     transform: scaleX(1);
     transform-origin: left;
 }
-/* .btn--animated:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ffb827;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  transition-property: transform;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-  z-index: -1;
-}
 
-.btn--animated:hover {
-  color: #0d0d0d;
-}
-
-.btn--animated:hover:before {
-  transform: scaleX(1);
-  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-} */
 
 /* cart */
 
@@ -186,27 +150,22 @@ body {
   z-index: 1000;
   transition: 0.8s;
 }
-
 .cart.active {
   right: 0;
 }
-
 .cart-title {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
 }
-
 .detail-box {
   display: grid;
   row-gap: 0.5rem;
 }
-
 .cart-price {
   font-weight: 500;
 }
-
 .cart-quantity {
   border: 1px solid black;
   outline-color: #ffb827;
@@ -214,11 +173,6 @@ body {
   text-align: center;
   font-size: 1rem;
 }
-
-/* .cart-content{
-
-} */
-
 .cart-box {
   display: grid;
   grid-template-columns: 32% 50% 18%;
@@ -226,37 +180,31 @@ body {
   gap: 1rem;
   margin-top: 1rem;
 }
-
 .cart-img {
   width: 100px;
   height: 100px;
   object-fit: contain;
   padding: 10px;
 }
-
 .cart-product-title {
   font-size: 1rem;
   text-transform: uppercase;
 }
-
 .cart-remove {
   font-size: 24;
   color: red;
   cursor: pointer;
 }
-
 .total {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
   border-top: 1px solid black;
 }
-
 .total-title {
   font-size: 1rem;
   font-weight: 600;
 }
-
 .btn-buy {
   display: flex;
   margin: 1.5rem auto 0 auto;
@@ -270,14 +218,12 @@ body {
   border-radius: 30px;
   transition: 0.3s ease-in-out;
 }
-
 .btn-buy:hover {
   background: black;
 }
 .total-price {
   margin-left: 0.5rem;
 }
-
 .close-cart {
   position: absolute;
   top: 1rem;
@@ -286,13 +232,12 @@ body {
   color: #ffb827;
   cursor: pointer;
 }
-/* media queries */
 
+/* media queries */
 @media screen and (max-width: 900px) {
   .navbar {
     padding: 0;
   }
-
   .navbar .logo {
     position: absolute;
     top: 40px;
@@ -313,12 +258,10 @@ body {
     margin-left: -100%;
     transition: all 0.5s ease;
   }
-
   .nav-links.mobile-menu {
     margin-left: 0;
     z-index: 999;
   }
-
   .nav-links ul {
     display: flex;
     flex-direction: column;
@@ -348,7 +291,6 @@ body {
     position: fixed;
     z-index: 999;
   }
-
   .nav-links button {
     margin-top: 40px;
     margin-left: 0;
@@ -359,69 +301,4 @@ body {
   .cart {
     width: 300px;
   }
-}
-
-/* Navbar */
-.newnav {
-    /* width: 100%; */
-    height: 50px;
-    background: #fff;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
-}
-.newnav .logo {
-    color: #000;
-    text-decoration: none;
-    font-family: 'Poppins';
-    font-size: 2em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-.newnav .group {
-    display: flex;
-    align-items: center;
-}
-.newnav ul {
-    position: relative;
-    display: flex;
-    gap: 50px;
-}
-.newnav ul li {
-    list-style: none;
-}
-.newnav ul li a {
-    position: relative;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: 400;
-    color: #000;
-    text-transform: uppercase;
-}
-.newnav ul li a:not(.welcome) {
-    cursor: pointer;
-}
-.newnav ul li a:not(.welcome)::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    width: 100%;
-    height: 2px;
-    background: #ffb827;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-    transform-origin: right;
-}
-.newnav ul li a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-.newnav ul li .welcome {
-    background: #ffb827;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-weight: bold;
 }
