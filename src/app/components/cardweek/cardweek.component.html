@@ -1,16 +1,18 @@
 
     <div class="wrap">
         <div class="card">
-            <div class="content">
-                <h2><a (click)="openDialog()">{{menu.day}}</a></h2>
-                <div class="card-int">
-                    <p> Plat 1 :  {{ menu.plat1 }} </p>
+            <div class="content" *ngFor="let day of mealsPerDay">
+                
+                <h2><a (click)="openDialog()">{{day.name}}</a></h2>
+                <div class="card-int" *ngFor="let meal of day.meals">
+                    <img  src="{{meal.image}}" alt="{{meal.image}}">
+                    <p> Plat  :  {{meal.label}} </p>
                 </div>
-                <div class="card-int">
-                    <p>Plat 2 : {{  menu.plat2 }}</p>
-                </div> 
+
+                
             </div>
         </div>
 
     </div>
 
+    

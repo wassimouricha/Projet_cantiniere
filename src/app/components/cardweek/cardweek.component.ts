@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Menu } from 'src/app/modal/menuweek/menu';
+import { AllMealsForTheWeek, Menu } from 'src/app/modal/menuweek/menu';
 import { MenuService } from 'src/app/modal/menuweek/menu.service';
 
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
@@ -13,14 +13,16 @@ import { DialogContentComponent } from '../dialog-content/dialog-content.compone
   styleUrls: ['./cardweek.component.css']
 })
 export class CardweekComponent implements OnInit {
-  @Input() menu!: Menu;
-  constructor(  private menuService : MenuService,public dialog: MatDialog, private client: HttpClient ) { 
+ 
+  mealsPerDay : AllMealsForTheWeek[];
 
-    console.log("constructeur");
-
-  }
+  constructor(  
+    private menuService : MenuService,
+    public dialog: MatDialog, 
+    ) {}
 
   ngOnInit(): void {
+    this.getAllMenus();
   }
 
   
@@ -33,6 +35,71 @@ export class CardweekComponent implements OnInit {
       result => console.log('dialog result', result)
     );
   }
+    
+    getAllMenus(){
+      this.menuService.getMenuOfTheWeek()
+        .subscribe(menuForAday => {
+          menuForAday.forEach((menu, index) => {
+            menu.day = this.findTheDay(index);
+          });
+          console.log(menuForAday);
+          
+          const mealsPerDay = this.groupByDay(menuForAday);
+          this.mealsPerDay=[...mealsPerDay];
+          
+        });
+
+    }
+
+    /**
+     * pour chaques repas de chaques jour  de la semaine on attribue un menu et un jour
+     */
+    groupByDay(items: Menu[]): AllMealsForTheWeek[] {
+      console.log("items",items.filter((item: Menu) => item.day === 'lundi'));
+      
+      const lundiMeal: Menu[] = items.filter((item: Menu) => item.day === 'lundi')
+      const mardiMeal: Menu[] = items.filter((item: Menu) => item.day === 'mardi')
+      const mercrediMeal: Menu[] = items.filter((item: Menu) => item.day === 'mercredi')
+      const jeudiMeal: Menu[] = items.filter((item: Menu) => item.day === 'jeudi')
+      const vendrediMeal: Menu[] = items.filter((item: Menu) => item.day === 'vendredi')
+      console.log("lundi",lundiMeal);
+      
+      const mealsPerDay: AllMealsForTheWeek[] = [
+        {
+          id: 1, 
+          name: 'lundi',
+          meals: lundiMeal
+        },
+        {
+          id: 1, 
+          name: 'mardi',
+          meals: mardiMeal
+        },
+        {
+          id: 1, 
+          name: 'mercredi',
+          meals: mercrediMeal
+        },
+        {
+          id: 1, 
+          name: 'jeudi',
+          meals: jeudiMeal
+        },
+        {
+          id: 1, 
+          name: 'vendredi',
+          meals: vendrediMeal
+        }
+      ]
+      console.log(mealsPerDay);
+      
+      return mealsPerDay
+    } 
+
+    findTheDay(index : number ) : string{
+      return ["lundi", "mardi", "mercredi" , "jeudi" , "vendredi"][Math.floor(index/2)]
+    }
+
 
 
 }

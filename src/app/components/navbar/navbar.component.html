@@ -5,6 +5,7 @@
     <a routerLink="/Home" class="logo">CANTINIÈRE</a>
     <div class="nav-links">
         <ul>
+            <!-- ici vous voyez le *ngif avec le token et ma method pour savoir si l'utilisateur est connecté ou pas -->
             <a class="bonjour" *ngIf="tokenService.isLogged()">Bonjour {{ firstname }} </a>
             <a class="bonjour" *ngIf="!tokenService.isLogged()">Bonjour Utilisateur </a>
             <a routerLink="/Home"><button type="button" class=" btn--border btn-read btn--animated">Plats de la Semaine</button></a>
