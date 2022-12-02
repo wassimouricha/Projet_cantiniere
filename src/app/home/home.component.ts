@@ -10,19 +10,12 @@ import { MenuService } from '../modal/menuweek/menu.service';
 })
 export class HomeComponent implements OnInit {
 
-  menu: Menu[] = [
-    {
-      title: "string",
-      day:"string",
-      plat1: "string",
-      plat2: "string",
-    }
-  ];
+
 
   constructor( private menuService : MenuService) { }
 
   ngOnInit(): void {
-        this.menu = this.menuService.getMenu();
+      
   }
 
 }
