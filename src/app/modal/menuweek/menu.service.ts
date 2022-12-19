@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Menu } from './menu';
 
 @Injectable({
@@ -6,51 +9,19 @@ import { Menu } from './menu';
 })
 export class MenuService {
 
-  menus: Menu[] = [
-    {    title: "titre",
-    day: "Lundi",
-      plat1: "repas 1",
-      plat2: "repas 2",
-       },
-    {    title: "titre",
-    day: "Mardi",
-      plat1: "repas 1",
-      plat2: "repas 2",
-       },
-    {    title: "titre",
-    day: "Mercredi",
-      plat1: "repas 1",
-      plat2: "repas 2",
-       },
-    {    title: "titre",
-    day: "Jeudi",
-      plat1: "repas 1",
-      plat2: "repas 2",
-       },
-    {    title: "titre",
-    day: "Vendredi",
-      plat1: "repas 1",
-      plat2: "repas 2",
-       },
+  baseURL = environment.url;
+  id: number;
 
-      ];
+
     
 
-  constructor() { }
+  constructor( 
+    private _http: HttpClient
+  ){}
 
-  getMenu(): Menu[]{
-    return this.menus
-  }
 
-  addTask(menu: Menu): void{
-    this.menus.push(menu);
-  }
+      getMenuOfTheWeek() : Observable<Menu[]>{
+        return this._http.get<Menu[]>(`${this.baseURL}/meal/findallavailableforthisweek`)
+      }
 
-  deleteTask(menu:Menu) :void {
-    this.menus =  this.menus.filter(
-     (mnu:Menu) => {
-       return  JSON.stringify(menu) !== JSON.stringify(mnu);
-     })
-   }
- 
 }

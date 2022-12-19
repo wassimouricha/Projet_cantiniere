@@ -15,17 +15,12 @@ import { MenuService } from './modal/menuweek/menu.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Projet Cantinière dev branch';
 
 
-  menu: Menu[] = [
-    {
-      title: "string",
-      day:"string",
-      plat1: "string",
-      plat2: "string",
-    }
-  ];
+
+  menu: Menu[] = [];
 
   constructor( private menuService : MenuService, private  appelService: AppelService){}
 
@@ -35,18 +30,7 @@ export class AppComponent {
 
     
     
-    // this.tasks = this.taskService.getTask();
-    this.appelService.getTask()
-    .subscribe((todos: any[]) => {
-      this.menu = todos.map<Menu>((todo: any) => {
-        return {
-          title: todo.title,
-          day: todo.day,
-          plat1: todo.plat1,
-          plat2: todo.plat2,
-        }
-      })
-    })
+
     
 
   }

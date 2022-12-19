@@ -5,12 +5,16 @@
     <a routerLink="/Home" class="logo">CANTINIÈRE</a>
     <div class="nav-links">
         <ul>
-            <a class="bonjour">Bonjour Utilisateur</a>
+            <!-- ici vous voyez le *ngif avec le token et ma method pour savoir si l'utilisateur est connecté ou pas -->
+            <a class="bonjour" *ngIf="tokenService.isLogged()">Bonjour {{ firstname }} </a>
+            <a class="bonjour" *ngIf="!tokenService.isLogged()">Bonjour Utilisateur </a>
             <a routerLink="/Home"><button type="button" class=" btn--border btn-read btn--animated">Plats de la Semaine</button></a>
             <a routerLink="/Cartes" ><button type="button" class=" btn--border btn-read btn--animated">Carte</button></a>
-                <a (click)="openDialog()"><button type="button" class=" btn--border btn-read btn--animated">Se  Connecter</button></a>
-                    <!-- pour appeler une icone fontawesome en html angular -->
-                <button (click)="openCart()" type="button" class=" btn--border btn-read btn--animated cart-icon" ><fa-icon [icon]="cart" ></fa-icon></button>
+            <a routerLink="/UserAccount" *ngIf="tokenService.isLogged()"><button type="button" class=" btn--border btn-read btn--animated">Mon compte</button></a>
+            <a (click)="openDialog()" *ngIf="!tokenService.isLogged()"><button type="button" class=" btn--border btn-read btn--animated">Se  Connecter</button></a>
+            <a (click)="tokenService.logout()" *ngIf="tokenService.isLogged()"><button type="button" class=" btn--border btn-read btn--animated">Se  Deconnecter</button></a>
+            <!-- pour appeler une icone fontawesome en html angular -->
+            <button (click)="openCart()" type="button" class=" btn--border btn-read btn--animated cart-icon" ><fa-icon [icon]="cart" ></fa-icon></button>
         </ul>
     </div>
     <!-- panier -->
@@ -45,6 +49,5 @@
             <span></span>
         </div>
 </nav>
-
 
 
