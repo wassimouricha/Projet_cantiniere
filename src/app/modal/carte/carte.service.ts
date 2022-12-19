@@ -48,15 +48,6 @@ export class CarteService {
     return this.cartes
   }
 
-  addTask(carte: Carte): void{
-    this.cartes.push(carte);
-  }
 
-  deleteTask(carte:Carte) :void {
-    this.cartes =  this.cartes.filter(
-     (crt:Carte) => {
-       return  JSON.stringify(carte) !== JSON.stringify(crt);
-     })
-   }
  
 }
