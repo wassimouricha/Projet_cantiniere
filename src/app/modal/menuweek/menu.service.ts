@@ -10,6 +10,7 @@ import { Menu } from './menu';
 export class MenuService {
 
   baseURL = environment.url;
+  id: number;
 
 
     
@@ -22,4 +23,5 @@ export class MenuService {
       getMenuOfTheWeek() : Observable<Menu[]>{
         return this._http.get<Menu[]>(`${this.baseURL}/meal/findallavailableforthisweek`)
       }
+
 }
