@@ -15,7 +15,9 @@ import { MenuService } from './modal/menuweek/menu.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Projet Cantinière version eric';
+
+  title = 'Projet Cantinière dev branch';
+
 
 
   menu: Menu[] = [];
@@ -30,5 +32,6 @@ export class AppComponent {
     
 
     
+
   }
 }

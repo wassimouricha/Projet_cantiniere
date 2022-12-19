@@ -20,7 +20,8 @@ export class DialogConnexionComponent implements OnInit {
     password: ''
   }
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any , 
+  constructor(@Inject(MAT_DIALOG_DATA) 
+  public data: any , 
   private http: HttpClient, 
   private authService : AuthService , 
   private matDialog : MatDialog , 
