@@ -1,18 +1,35 @@
-
-    <div class="wrap">
+<!-- <div class="wrap">
         <div class="card">
             <div class="content" *ngFor="let day of mealsPerDay">
                 
                 <h2><a (click)="openDialog()">{{day.name}}</a></h2>
                 <div class="card-int" *ngFor="let meal of day.meals">
-                    <img  src="{{meal.image}}" alt="{{meal.image}}">
+                    <img class="meal__img" src="https://www.och-lco.ca/wp-content/uploads/2015/07/unavailable-image.jpg" alt="{{meal.image}}">
                     <p> Plat  :  {{meal.label}} </p>
+                    <p class="meal__price"> {{meal.priceDF}}€ </p>
                 </div>
 
                 
             </div>
         </div>
 
+    </div> -->
+<div class="content" *ngFor="let day of mealsPerDay">
+    <h2 class="meal__day"><a (click)="openDialog()">{{day.name}}</a></h2>
+  <div class="meal" *ngFor="let meal of day.meals">
+    <div class="meal__hero">
+      <img src="https://www.och-lco.ca/wp-content/uploads/2015/07/unavailable-image.jpg" alt="Image du repas"
+        class="meal__img">
     </div>
+    <div class="meal__content">
+      <div class="meal__heading">
+        <p class="meal__title"> {{meal.label}} </p>
+      </div>
+      <div class="meal__description">
+        <p class="meal__description">Prix: {{ meal.priceDF }}€</p>
 
-    
+      </div>
+      <div class="meal__details"></div>
+    </div>
+  </div>
+</div>

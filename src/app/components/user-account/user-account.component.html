@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<main>
+    <div class="content">
+        <div class="user-account card">
+            <div class="img__user-account">
+                <img class="banner__img" src="https://imgs.search.brave.com/5un9I6deaT8fvhoJSiigCtTQIH0Xh4Z8NmsKcs-vDsw/rs:fit:1200:675:1/g:ce/aHR0cHM6Ly91cGxv/YWRzLmxlYm9uYm9u/LmZyL3NvdXJjZS8y/MDE5L3NlcHRlbWJl/ci9qeWNqc251bXE0/XzJfMTIwMC5qcGc" />
+        <img class="avatar__img" src="https://imgs.search.brave.com/-fo-JE1S27P_Ir15Y0sFpdUVkAG6lmZATfwMy-vJ_aw/rs:fit:499:498:1/g:ce/aHR0cHM6Ly93d3cu/dzNzY2hvb2xzLmNv/bS9ob3d0by9pbWdf/YXZhdGFyLnBuZw" alt="jofpin"/>
+            </div>
+            <div class="data__user-account">
+                <h1>{{ firstname }} {{ name }}</h1>
+                <p>Utilisateur</p>
+            </div>
+            <div class="description__user-account">
+                 <ul>
+                    <li>
+                        <h4 class="title">Adresse email :</h4>
+                        <span>{{ email }}</span>
+                    </li>
+                    <li>
+                        <h4 class="title">Mot de passe :</h4>
+                        <span><a routerLink="/RegenPassword">Modifier mon mot de passe</a></span>
+                    </li>
+                    <li>
+                        <h4 class="title">Commandes :</h4>
+                        <span><a routerLink="UserAccount">Accéder à mes commandes</a></span>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+</main>
