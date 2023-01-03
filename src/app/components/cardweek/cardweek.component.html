@@ -5,7 +5,7 @@
                 
                 <h2><a (click)="openDialog()">{{day.name}}</a></h2>
                 <div class="card-int" *ngFor="let meal of day.meals">
-                    <img  src="{{meal.image}}" alt="{{meal.image}}">
+                    <img  src="{{meal.image}}" alt="">
                     <p> Plat  :  {{meal.label}} </p>
                 </div>
 

@@ -5,6 +5,7 @@ import { AllMealsForTheWeek, Menu } from 'src/app/modal/menuweek/menu';
 import { MenuService } from 'src/app/modal/menuweek/menu.service';
 
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
+import { Observable } from 'rxjs/internal/Observable';
 
 
 @Component({
@@ -41,6 +42,7 @@ export class CardweekComponent implements OnInit {
         .subscribe(menuForAday => {
           menuForAday.forEach((menu, index) => {
             menu.day = this.findTheDay(index);
+            // menu.image = this.getImageForAMeal(index);
           });
           console.log(menuForAday);
           

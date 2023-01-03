@@ -30,6 +30,8 @@ body{
     font-size: 2em;
     font-weight: bold;
     font-family: 'Poppins';
+    display: flex;
+    align-items: center;
 
 }
 
@@ -279,6 +281,12 @@ font-size: 1rem;
     font-size: 2rem;
     color: #ffb827;
     cursor: pointer;
+
+}
+
+.logo   img{
+
+    width: 10%;
 }
 /* media queries */
 
@@ -291,7 +299,11 @@ font-size: 1rem;
         position: absolute;
         top: 40px;
         left: 30px;
+
+      
     }
+
+
 .nav-links{
     position: fixed!important;
     top: 0;
