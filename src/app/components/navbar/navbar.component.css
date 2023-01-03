@@ -30,7 +30,7 @@ body {
     display: flex;
     align-items: center;
 
-
+}
 
 .navbar .nav-links {
   font-family: "Poppins";
@@ -315,4 +315,6 @@ body {
   .cart {
     width: 300px;
   }
+}
+
 }
