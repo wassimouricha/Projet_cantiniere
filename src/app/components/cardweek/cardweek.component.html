@@ -4,6 +4,9 @@
                 
                 <h2><a (click)="openDialog()">{{day.name}}</a></h2>
                 <div class="card-int" *ngFor="let meal of day.meals">
+
+                    <img  src="{{meal.image}}" alt="">
+
                     <img class="meal__img" src="https://www.och-lco.ca/wp-content/uploads/2015/07/unavailable-image.jpg" alt="{{meal.image}}">
                     <p> Plat  :  {{meal.label}} </p>
                     <p class="meal__price"> {{meal.priceDF}}€ </p>

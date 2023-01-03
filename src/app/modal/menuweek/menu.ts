@@ -5,7 +5,6 @@ export class Menu  {
     priceDF: number;
     category: number;
     image: string;
-    imageId: string;
     day:string;
 
         constructor(
@@ -13,7 +12,7 @@ export class Menu  {
             label: string = "",
             description: string = "",
             category: number = 0,
-            image : string = "",
+            image: string = "",
             day : string = "",
             priceDF: number
 
@@ -22,9 +21,10 @@ export class Menu  {
                     this.label = label,
                     this.description = description,
                     this.category = category,
-                    this.image = image,
-                    this.day = day
+                    this.day = day,
+                    this.image = image
                     this.priceDF = priceDF
+
 
         }
 
@@ -34,14 +34,17 @@ export class AllMealsForTheWeek {
     id: number;
     name: string;
     meals: Menu[];
+   
 
     constructor(
         id: number = 0,
         name : string = "",
-        meals : Menu[] = []
+        meals : Menu[] = [],
+   
         ){
             this.id = id,
             this.name = name,
             this.meals = meals
+         
     }
 }

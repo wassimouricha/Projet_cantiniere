@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Menu } from './menu';
+import { ImageMeal } from '../image/image';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,11 @@ export class MenuService {
 
       getMenuOfTheWeek() : Observable<Menu[]>{
         return this._http.get<Menu[]>(`${this.baseURL}/meal/findallavailableforthisweek`)
+      }
+
+
+      getImageForAMeal(image: number): Observable<ImageMeal>{
+        return this._http.get<ImageMeal>(`${this.baseURL}/meal/findimg/${image}`)
       }
 
 }

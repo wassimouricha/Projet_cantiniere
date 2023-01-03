@@ -22,11 +22,15 @@ body {
   color: black;
 }
 
-.navbar .logo {
-  font-size: 2em;
-  font-weight: bold;
-  font-family: "Poppins";
-}
+
+.navbar .logo{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Poppins';
+    display: flex;
+    align-items: center;
+
+
 
 .navbar .nav-links {
   font-family: "Poppins";
@@ -224,17 +228,26 @@ body {
 .total-price {
   margin-left: 0.5rem;
 }
-.close-cart {
-  position: absolute;
-  top: 1rem;
-  right: 0.8rem;
-  font-size: 2rem;
-  color: #ffb827;
-  cursor: pointer;
+
+
+.close-cart{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: #ffb827;
+    cursor: pointer;
+
 }
+
+.logo   img{
+
+    width: 10%;
+
 
 /* media queries */
 @media screen and (max-width: 900px) {
+
   .navbar {
     padding: 0;
   }
@@ -245,6 +258,7 @@ body {
   }
   .nav-links {
     position: fixed !important;
+
     top: 0;
     left: 0;
     position: absolute;
