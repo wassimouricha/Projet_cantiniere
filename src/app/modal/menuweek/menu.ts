@@ -1,6 +1,8 @@
 export class Menu  {
     id: number;
     label: string;
+    description: string;
+    priceDF: number;
     category: number;
     image: string;
     day:string;
@@ -8,15 +10,22 @@ export class Menu  {
         constructor(
             id : number = 0, 
             label: string = "",
+            description: string = "",
             category: number = 0,
             image: string = "",
             day : string = "",
+            priceDF: number
+
             ){
                     this.id = id,
                     this.label = label,
+                    this.description = description,
                     this.category = category,
                     this.day = day,
                     this.image = image
+                    this.priceDF = priceDF
+
+
         }
 
 }

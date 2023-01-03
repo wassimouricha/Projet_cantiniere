@@ -12,6 +12,7 @@ import { ImageMeal } from '../image/image';
 export class MenuService {
 
   baseURL = environment.url;
+  id: number;
 
 
     
@@ -25,7 +26,9 @@ export class MenuService {
         return this._http.get<Menu[]>(`${this.baseURL}/meal/findallavailableforthisweek`)
       }
 
+
       getImageForAMeal(image: number): Observable<ImageMeal>{
         return this._http.get<ImageMeal>(`${this.baseURL}/meal/findimg/${image}`)
       }
+
 }

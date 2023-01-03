@@ -18,6 +18,9 @@ import { InscriptionComponent } from './components/inscription/inscription.compo
 import { HttpClientModule }  from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
+import { UserAccountComponent } from './components/user-account/user-account.component';
+import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
+import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
 
 
 
@@ -34,6 +37,9 @@ import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
     DialogConnexionComponent,
     InscriptionComponent,
     CarteContenuComponent,
+    UserAccountComponent,
+    RequestResetComponent,
+    ResponseResetComponent,
   ],
   imports: [
     BrowserModule,
