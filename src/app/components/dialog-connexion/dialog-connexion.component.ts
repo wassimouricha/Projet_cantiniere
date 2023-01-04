@@ -1,3 +1,4 @@
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
@@ -11,6 +12,8 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./dialog-connexion.component.css']
 })
 export class DialogConnexionComponent implements OnInit {
+  close = faClose;
+
   // any car pas de type
   form: Login = {
     email: '',
