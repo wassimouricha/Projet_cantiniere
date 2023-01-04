@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Menu } from './menu';
-import { ImageMeal } from '../image/image';
+import { ImageMeal, Menu } from './menu';
+
 
 
 @Injectable({
@@ -25,7 +25,7 @@ export class MenuService {
         return this._http.get<Menu[]>(`${this.baseURL}/meal/findallavailableforthisweek`)
       }
 
-      getImageForAMeal(image: number): Observable<ImageMeal>{
-        return this._http.get<ImageMeal>(`${this.baseURL}/meal/findimg/${image}`)
+      getImageForAMeal(imageId: number): Observable<ImageMeal>{
+        return this._http.get<ImageMeal>(`${this.baseURL}/meal/findimg/${imageId}`)
       }
 }

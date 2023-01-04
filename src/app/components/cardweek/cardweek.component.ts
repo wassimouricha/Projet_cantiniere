@@ -36,13 +36,18 @@ export class CardweekComponent implements OnInit {
       result => console.log('dialog result', result)
     );
   }
+
+  
     
     getAllMenus(){
       this.menuService.getMenuOfTheWeek()
         .subscribe(menuForAday => {
           menuForAday.forEach((menu, index) => {
             menu.day = this.findTheDay(index);
-            // menu.image = this.getImageForAMeal(index);
+            this.menuService.getImageForAMeal(menu.id)
+            .subscribe(imageForAMeal => {
+              menu.image = `http://localhost:8080/stone.lunchtime/${imageForAMeal.imagePath}`
+            });
           });
           console.log(menuForAday);
           
