@@ -105,95 +105,88 @@ hr {
   gap: 2em;
   margin-top: 50px;
 }
+.card__container {
+  display: flex;
+  gap: 3em;
+}
 .meal__day {
   text-transform: capitalize;
   font-size: 3em;
   color: #ffb827;
 }
-.meal {
-  max-width: 800px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.096);
-  display: flex;
-}
-
-.meal__hero {
-  flex: 0 0 45%;
-}
-
-.meal__img {
-  width: 100%;
-  display: block;
-}
-
-.meal__content {
-  flex: 1;
-  background-color: white;
-  padding: 35px 30px;
-  
-  display: flex;
-  flex-direction: column;
-}
-
-.meal__price {
-  flex: 0 0 50px;
-  background: linear-gradient(to bottom, #67b26f, #4ca2cd);
-  writing-mode: vertical-rl;
-  color: white;
-  font-size: 18px;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.meal__heading {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.meal__title {
-  font-size: 20px;
-  margin-right: auto;
-  letter-spacing: 1px;
-}
-
-.meal__tag {
-  font-size: 10px;
-  text-transform: uppercase;
-  color: white;
-  padding: 2px 7px;
-  border-radius: 100px;
-  margin-left: 7px;
-}
-
-.meal__tag--1 { background-color: #67b26f; }
-
-.meal__tag--2 { background-color: #4ca2cd; }
-
-.meal__description {
-  font-size: 18px;
-  margin-top: 70px;
-}
-
-.meal__details {
-  display: flex;
-  margin-top: auto;
-}
-
-.meal__detail {
-  font-size: 15px;
-  text-transform: uppercase;
-  margin-right: 20px;
-  font-weight: 700;
-  
-  display: flex;
-  align-items: center;
-}
-
 .emoji {
   font-size: 20px;
   margin-right: 3px;
+}
+
+.meal__card {
+  --border-radius: 0.75rem;
+  --primary-color: #ffb827;
+  --secondary-color: #9c711a;
+  width: 210px;
+  font-family: "Arial";
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: #f1f1f3;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+  position: relative;
+}
+
+.meal__card .meal__img {
+    width: 205px;
+    height: 205px;
+    border-radius: var(--border-radius);
+}
+
+.meal__card > * + * {
+  margin-top: 1.1em;
+}
+
+.meal__card .meal__card-content {
+  color: var(--secondary-color);
+  font-size: 0.86rem;
+}
+
+.meal__card .meal__card-title {
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.meal__card .meal__card-price {
+  color: #6e6b80;
+  font-size: 0.8rem;
+}
+
+.meal__card .meal__card-arrow {
+  position: absolute;
+  background: var(--primary-color);
+  padding: 0.4rem;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  bottom: 0;
+  right: 0;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meal__card svg {
+  transition: 0.2s;
+}
+
+/* hover */
+.meal__card:hover .meal__card-title {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.meal__card:hover .meal__card-arrow {
+  background: #111;
+}
+
+.meal__card:hover .meal__card-arrow svg {
+  transform: translateX(3px);
 }

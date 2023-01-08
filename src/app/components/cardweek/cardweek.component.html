@@ -1,39 +1,21 @@
-<!-- <div class="wrap">
-        <div class="card">
-            <div class="content" *ngFor="let day of mealsPerDay">
-                
-                <h2><a (click)="openDialog()">{{day.name}}</a></h2>
-                <div class="card-int" *ngFor="let meal of day.meals">
-
-                    <img  src="{{meal.image}}" alt="">
-
-                    <img class="meal__img" src="https://www.och-lco.ca/wp-content/uploads/2015/07/unavailable-image.jpg" alt="{{meal.image}}">
-                    <p> Plat  :  {{meal.label}} </p>
-                    <p class="meal__price"> {{meal.priceDF}}€ </p>
-                </div>
-                
-            </div>
-        </div>
-
-    </div> -->
 <div class="content" *ngFor="let day of mealsPerDay">
-    <h2 class="meal__day"><a (click)="openDialog()">{{day.name}}</a></h2>
-  <div class="meal" *ngFor="let meal of day.meals">
-    <div class="meal__hero">
-        <!-- Image venant de l'api pour chaques repas -->
-        <img  src="{{meal.image}}" alt="Image_du_repas_Api">
-      <img src="https://www.och-lco.ca/wp-content/uploads/2015/07/unavailable-image.jpg" alt="Image du repas"
-        class="meal__img">
-    </div>
-    <div class="meal__content">
-      <div class="meal__heading">
-        <p class="meal__title"> {{meal.label}} </p>
+  <h2 class="meal__day"><a (click)="openDialog()">{{day.name}}</a></h2>
+  <div class="card__container">
+    <div class="meal__card" *ngFor="let meal of day.meals">
+      <img class="meal__img" src="{{meal.image}}" alt="Image de {{meal.label}}">
+      <h3 class="meal__card-title">{{meal.label}}
+      </h3>
+      <p class="meal__card-content">{{meal.description}}</p>
+      <div class="meal__card-price">
+        {{ meal.priceDF }}€
       </div>
-      <div class="meal__description">
-        <p class="meal__description">Prix: {{ meal.priceDF }}€</p>
-
+      <div class="meal__card-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+          <path fill="#fff"
+            d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z">
+          </path>
+        </svg>
       </div>
-      <div class="meal__details"></div>
     </div>
   </div>
 </div>
