@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { faBars, faCartShopping, faClose, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { TokenService } from 'src/app/services/token.service';
 import { DialogConnexionComponent } from '../dialog-connexion/dialog-connexion.component';
+import { cartService } from 'src/app/services/cart.service';
 
 
 
@@ -19,7 +20,7 @@ export class NavbarComponent implements OnInit {
   trash = faTrash;
   close = faClose;
 
-  constructor(public dialog: MatDialog , public tokenService : TokenService ) { 
+  constructor(public dialog: MatDialog , public tokenService : TokenService , protected cartService: cartService ) { 
   }
 
   openDialog() {
@@ -46,13 +47,21 @@ export class NavbarComponent implements OnInit {
     })
 }
   
+deleteMenuFromCart(menu: any){
+  this.cartService.removeArticleFromCart(menu)
+}
+
 
 
   firstname = ""
-
+  panier = [];
   ngOnInit(): void {
     togglebutton();
-    this.firstname = this.tokenService.getUserInfo().firstname
+    this.firstname = this.tokenService.getUserInfo().firstname,
+    this.panier = this.cartService.getPanierLocalStorage()
+    
   }
+
+
 
 }
