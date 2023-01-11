@@ -55,33 +55,7 @@
       </button>
     </ul>
   </div>
-  <!-- panier -->
-  <div class="cart">
-    <h2 class="cart-title">Votre Panier</h2>
-    <!-- contenu -->
-    <div class="cart-content">
-      <div class="cart-box">
-        <img src="/assets/steak.jpg" alt="product_image" class="cart-img" />
-        <div class="detail-box">
-          <div class="cart-product-title">Steak frites</div>
-          <div class="cart-price">9 €</div>
-          <input type="number" value="1" class="cart-quantity" />
 
-    <a routerLink="/Home" class="logo"><img src="/assets/cantine.png" alt="logo_cantine"> CANTINIÈRE</a>
-    <div class="nav-links">
-        <ul>
-            <!-- ici vous voyez le *ngif avec le token et ma method pour savoir si l'utilisateur est connecté ou pas -->
-            <a class="bonjour" *ngIf="tokenService.isLogged()">Bonjour {{ firstname }} </a>
-            <a class="bonjour" *ngIf="!tokenService.isLogged()">Bonjour Utilisateur </a>
-            <a routerLink="/Home"><button type="button" class=" btn--border btn-read btn--animated">Plats de la Semaine</button></a>
-            <a routerLink="/Cartes" ><button type="button" class=" btn--border btn-read btn--animated">Carte</button></a>
-            <a routerLink="/UserAccount" *ngIf="tokenService.isLogged()"><button type="button" class=" btn--border btn-read btn--animated">Mon compte</button></a>
-            <a (click)="openDialog()" *ngIf="!tokenService.isLogged()"><button type="button" class=" btn--border btn-read btn--animated">Se  Connecter</button></a>
-            <a (click)="tokenService.logout()" *ngIf="tokenService.isLogged()"><button type="button" class=" btn--border btn-read btn--animated">Se  Deconnecter</button></a>
-            <!-- pour appeler une icone fontawesome en html angular -->
-            <button (click)="openCart()" type="button" class=" btn--border btn-read btn--animated cart-icon" ><fa-icon [icon]="cart" ></fa-icon></button>
-        </ul>
-    </div>
     <!-- panier -->
         <div class="cart">
             <h2 class="cart-title">Votre Panier</h2>
@@ -108,26 +82,8 @@
             <!-- fermer le panier -->
             <a><fa-icon [icon]="close" class="close-cart"></fa-icon></a>
         </div>
-        <!-- togglebutton -->
-        <div class="toggle">
-            <span></span>
-            <span></span>
-            <span></span>
 
-        </div>
-        <!-- effacer le panier -->
-        <a><fa-icon [icon]="trash" class="cart-remove"></fa-icon></a>
-      </div>
-    </div>
-    <div class="total">
-      <div class="total-title">Total</div>
-      <div class="total-price">9 €</div>
-    </div>
-    <!-- bouton acheter -->
-    <button type="button" class="btn-buy">Payer</button>
-    <!-- fermer le panier -->
-    <a><fa-icon [icon]="close" class="close-cart"></fa-icon></a>
-  </div>
+
   <!-- togglebutton -->
   <div class="toggle">
     <span></span>
