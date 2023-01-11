@@ -21,10 +21,9 @@
   <div class="meal" *ngFor="let meal of day.meals">
     <div class="meal__hero">
         <!-- Image venant de l'api pour chaques repas -->
-      <img src="{{meal.image}}" alt="Image du repas"
-        class="meal__img">
-      <!-- <img src="https://www.och-lco.ca/wp-content/uploads/2015/07/unavailable-image.jpg" alt="Image du repas"
-        class="meal__img"> -->
+
+        <img  src="{{meal.image}}" alt="Image_du_repas_Api">
+
     </div>
     <div class="meal__content">
       <div class="meal__heading">
@@ -32,7 +31,8 @@
       </div>
       <div class="meal__description">
         <p class="meal__description">Prix: {{ meal.priceDF }}€</p>
-
+        <!-- Pour ajouter un menu au panier -->
+            <button (click)="addMenuToCart(meal)">Ajouter au panier </button>
       </div>
       <div class="meal__details"></div>
     </div>

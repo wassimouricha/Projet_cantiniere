@@ -21,24 +21,25 @@
         <div class="cart">
             <h2 class="cart-title">Votre Panier</h2>
             <!-- contenu -->
-            <div class="cart-content">
+            <!-- contenu réactif avec protected -->
+            <div class="cart-content" *ngFor=" let repas of this.cartService.getPanierLocalStorage()">
                 <div class="cart-box">
-                    <img src="/assets/steak.jpg" alt="product_image" class="cart-img" >
+                    <img src="{{repas.image}}" alt="product_image" class="cart-img" >
                     <div class="detail-box">
-                        <div class="cart-product-title">Steak frites</div>
-                        <div class="cart-price">9 €</div>
+                        <div class="cart-product-title">{{ repas.label}}</div>
+                        <div class="cart-price">{{ repas.priceDF}}</div>
                         <input type="number" value="1" class="cart-quantity">
                     </div>
                     <!-- effacer le panier -->
-                    <a ><fa-icon [icon]="trash" class="cart-remove"></fa-icon></a>
+                    <a ><fa-icon [icon]="trash" class="cart-remove" (click)="deleteMenuFromCart(repas)"></fa-icon></a>
                 </div>
             </div>
             <div class="total">
                 <div class="total-title">Total</div>
-                <div class="total-price">9 €</div>
+                <div class="total-price">{{cartService.getTotalPrice()}}€</div>
             </div>
             <!-- bouton acheter -->
-            <button type="button" class="btn-buy">Payer</button>
+            <button type="button" class="btn-buy" >Payer</button>
             <!-- fermer le panier -->
             <a><fa-icon [icon]="close" class="close-cart"></fa-icon></a>
         </div>
