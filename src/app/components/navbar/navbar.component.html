@@ -31,15 +31,15 @@
                         <input type="number" value="1" class="cart-quantity">
                     </div>
                     <!-- effacer le panier -->
-                    <a ><fa-icon [icon]="trash" class="cart-remove"></fa-icon></a>
+                    <a ><fa-icon [icon]="trash" class="cart-remove" (click)="deleteMenuFromCart(repas)"></fa-icon></a>
                 </div>
             </div>
             <div class="total">
                 <div class="total-title">Total</div>
-                <div class="total-price">9 €</div>
+                <div class="total-price">{{cartService.getTotalPrice()}}€</div>
             </div>
             <!-- bouton acheter -->
-            <button type="button" class="btn-buy">Payer</button>
+            <button type="button" class="btn-buy" >Payer</button>
             <!-- fermer le panier -->
             <a><fa-icon [icon]="close" class="close-cart"></fa-icon></a>
         </div>

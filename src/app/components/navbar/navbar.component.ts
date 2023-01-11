@@ -47,6 +47,10 @@ export class NavbarComponent implements OnInit {
     })
 }
   
+deleteMenuFromCart(menu: any){
+  this.cartService.removeArticleFromCart(menu)
+}
+
 
 
   firstname = ""
@@ -55,6 +59,7 @@ export class NavbarComponent implements OnInit {
     togglebutton();
     this.firstname = this.tokenService.getUserInfo().firstname,
     this.panier = this.cartService.getPanierLocalStorage()
+    
   }
 
 
