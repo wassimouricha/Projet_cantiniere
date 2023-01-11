@@ -3,7 +3,7 @@
   <div class="card__container">
     <div class="meal__card" *ngFor="let meal of day.meals">
       <img class="meal__img" src="{{meal.image}}" alt="Image de {{meal.label}}">
-      <h3 class="meal__card-title">{{meal.label}}
+      <h3 class="meal__card-title"><a (click)="openDialog()">{{meal.label}}</a>
       </h3>
       <p class="meal__card-content">{{meal.description}}</p>
       <div class="meal__card-price">
