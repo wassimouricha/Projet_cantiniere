@@ -21,6 +21,7 @@ import { CarteContenuComponent } from './carte-contenu/carte-contenu.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
+import { GestionComponent } from './components/gestion/gestion.component';
 
 
 
@@ -40,6 +41,7 @@ import { ResponseResetComponent } from './components/password/response-reset/res
     UserAccountComponent,
     RequestResetComponent,
     ResponseResetComponent,
+    GestionComponent,
   ],
   imports: [
     BrowserModule,

@@ -240,10 +240,9 @@ body {
 
 }
 
-.logo   img{
-
+.logo img{
     width: 10%;
-
+}
 
 /* media queries */
 @media screen and (max-width: 900px) {
@@ -315,6 +314,4 @@ body {
   .cart {
     width: 300px;
   }
-}
-
 }
