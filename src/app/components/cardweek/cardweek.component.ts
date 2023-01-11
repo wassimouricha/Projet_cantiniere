@@ -6,6 +6,7 @@ import { MenuService } from 'src/app/modal/menuweek/menu.service';
 
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 import { Observable } from 'rxjs/internal/Observable';
+import { cartService } from 'src/app/services/cart.service';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class CardweekComponent implements OnInit {
 
   constructor(  
     private menuService : MenuService,
+    private cartService : cartService,
     public dialog: MatDialog, 
     ) {}
 
@@ -26,7 +28,9 @@ export class CardweekComponent implements OnInit {
     this.getAllMenus();
   }
 
-  
+  addMenuToCart(menu: any){
+      this.cartService.addArticleToCart(menu)
+  }
   openDialog() {
     const dialogRef = this.dialog.open(DialogContentComponent, {
       data: { title: 'Jour de la semaine'}

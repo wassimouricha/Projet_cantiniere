@@ -31,7 +31,8 @@
       </div>
       <div class="meal__description">
         <p class="meal__description">Prix: {{ meal.priceDF }}€</p>
-
+        <!-- Pour ajouter un menu au panier -->
+            <button (click)="addMenuToCart(meal)">Ajouter au panier </button>
       </div>
       <div class="meal__details"></div>
     </div>
