@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UpdateMenuService } from 'src/app/services/update-menu.service';
 
 @Component({
   selector: 'app-gestion',
@@ -9,14 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class GestionComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  name: string;
+  price: number;
+
+  constructor(private menuService: UpdateMenuService) { }
 
   ngOnInit(): void {
   }
 
-  menu: any = {
-    label: "",
-    priceDF: 0
+  updateMenu(id: string) {
+    this.menuService.updateMenuName(id, this.name).subscribe();
+    this.menuService.updateMenuPrice(id, this.price).subscribe();
   }
-
 }

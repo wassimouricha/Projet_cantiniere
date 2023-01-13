@@ -1,21 +1,33 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpdateMenuService {
-  httpClient: any;
-
+  private apiUrl = 'http://localhost:8080/stone.lunchtime/meal/update';
+  
   constructor(private http: HttpClient) { }
 
-  /**
-   * Fonction utilisée pour modifier un menu
-   * @param id ID du menu
-   */
-  updateMenu(id: string) : Observable<HttpResponse<object>>{
-    return this.httpClient.patch('http://localhost:8080/stone.lunchtime/meal/update', id , {observe: 'response'});
+  updateMenuName(id: string, name: string): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}/label`, {name: name}).pipe(catchError(this.handleError));
   }
 
+  updateMenuPrice(id: string, price: number): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}/priceDF`, {price: price}).pipe(catchError(this.handleError));
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      console.error('Une erreur s\'est produite:', error.error.message);
+    } else {
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+    return throwError(
+      'Un problème est survenu; veuillez réessayer plus tard.');
+  }
 }
