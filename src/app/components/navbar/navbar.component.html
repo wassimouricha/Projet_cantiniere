@@ -63,7 +63,7 @@
             <!-- contenu réactif avec protected -->
             <div class="cart-content" *ngFor=" let repas of this.cartService.getPanierLocalStorage()">
                 <div class="cart-box">
-                    <img src="{{repas.image}}" alt="product_image" class="cart-img" >
+                    <img src="{{repas.image}}" alt="Image du repas" class="cart-img" >
                     <div class="detail-box">
                         <div class="cart-product-title">{{ repas.label}}</div>
                         <div class="cart-price">{{ repas.priceDF}}</div>

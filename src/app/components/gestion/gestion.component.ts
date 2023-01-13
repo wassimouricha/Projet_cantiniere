@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-gestion',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  menu: any = {
+    label: "",
+    priceDF: 0
   }
 
 }
