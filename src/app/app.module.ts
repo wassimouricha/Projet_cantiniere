@@ -22,6 +22,7 @@ import { UserAccountComponent } from './components/user-account/user-account.com
 import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
 import { GestionComponent } from './components/gestion/gestion.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -42,6 +43,7 @@ import { GestionComponent } from './components/gestion/gestion.component';
     RequestResetComponent,
     ResponseResetComponent,
     GestionComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

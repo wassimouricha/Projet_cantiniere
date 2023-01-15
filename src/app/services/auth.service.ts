@@ -18,5 +18,9 @@ export class AuthService {
   register(register : Register ) : Observable<HttpResponse<object>>{
     return this.httpClient.put('http://localhost:8080/stone.lunchtime/user/register', register , {observe: 'response'}) 
   }
+  // fonction pour récupérer les données utilisateurs sur l'api
+  findall() : Observable<HttpResponse<object>>{
+    return this.httpClient.get('http://localhost:8080/stone.lunchtime/user/findall', {observe: 'response'}) 
+  }
 
 }
