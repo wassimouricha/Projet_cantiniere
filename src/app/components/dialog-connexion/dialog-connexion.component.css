@@ -1,21 +1,38 @@
-/* style du dialog */
-.mat-dialog-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
+
+/* General CSS */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  background: #eaeff4;
 }
 
-.mat-dialog-content {
-  overflow: unset;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* Div contenant le bouton close */
+.close { display: flex; justify-content: flex-end; }
+
+/* Bouton close */
+.close .btn__close {
+  font-size: 1.8em;
+  transition: 0.3s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.radio_dialog {
+/* Hover pour changer la couleur du bouton close */
+.close .btn__close:hover { color: rgb(110, 110, 110); }
+
+/* Titre du modal */
+.mat-dialog-title { display: flex; align-items: center; justify-content: center; font-size: 30px; }
+
+/* Contenu général du modal */
+.content__dialog {
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -23,48 +40,11 @@
   justify-content: space-between;
 }
 
-.labelradio {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  text-align: center;
-  margin: 5px;
-}
+/* Contenant des inputs */
+.input__dialog { display: flex; justify-content: center; }
 
-.souslabelradio {
-  justify-content: center;
-  margin: 5px;
-}
-
-.typechoice {
-  margin: 5px;
-}
-
-.input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 15px;
-}
-
-.radioselect {
-  display: flex;
-  justify-content: center;
-}
-
-/* webkit pour stylisé le placeholder dans l'input */
-::-webkit-input-placeholder {
-  text-align: center;
-}
-
-.bottomdialog {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Inputs */
-.radio_dialog .input {
+/* Inputs du formulaire */
+.content__dialog .input {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -78,19 +58,14 @@
   outline: none;
 }
 
-/* button */
-.close {
-  display: flex;
-  justify-content: flex-end;
-}
-.close .btn-read {
-    font-size: 1.8em;
-    transition: 0.3s;
-}
-.close .btn-read:hover {
-    color: rgb(110, 110, 110);
-}
-.btn-read {
+/* webkit pour stylisé le placeholder dans l'input */
+::-webkit-input-placeholder { text-align: center; }
+
+/* Contenant des boutons pour s'inscrire, se connecter et mot de passe oublié */
+.sign__button-container { display: flex; justify-content: space-between; }
+
+/* Boutons pour s'inscrire etc. */
+.sign__buttons {
   position: relative;
   font-family: "Poppins";
   font-size: 1em;
@@ -102,7 +77,8 @@
   font-weight: 500;
   cursor: pointer;
 }
-.btn--animated::before {
+/* Ligne orange en-dessous des boutons */
+.sign__buttons::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -113,60 +89,21 @@
   transition: transform 0.3s ease-in-out;
   transform-origin: right;
 }
-.btn--animated:hover:not(.close .btn-read):before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
 
-/* .btn--animated:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffb827;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out;
-    z-index: -1;
-}
+/* Hover pour animer la ligne orange en-dessous des boutons */
+.sign__buttons:hover:not(.close .btn-read):before { transform: scaleX(1); transform-origin: left; }
 
-.btn--animated:hover {
-color: #0d0d0d;
-}
+/* Erreurs de saisies */
+.errors { color: red; }
 
-.btn--animated:hover:before {
-transform: scaleX(1);
-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-} */
-
-.form_error {
-  color: red;
-}
-
-/* media queries */
-
+/* @Medias Querries */
 @media screen and (max-width: 800px) {
-  .radio_dialog {
-    flex-direction: column;
-  }
+  .content__dialog { flex-direction: column; }
 }
-
 @media screen and (max-width: 510px) {
-  .bottomdialog {
-    justify-content: center;
-  }
+  .sign__button { justify-content: center; }
 }
-
 @media screen and (max-width: 360px) {
-  .bottomdialog {
-    flex-direction: column;
-  }
-
-  .btn-read {
-    margin-bottom: 10px;
-  }
+  .sign__button { flex-direction: column; }
+  .btn-read { margin-bottom: 10px; }
 }

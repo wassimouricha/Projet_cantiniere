@@ -1,28 +1,29 @@
 <app-navbar></app-navbar>
-<div class="big_container">
-    <div class="container">
-        <div class="img">
-                <img src="/assets/cuistot.jpg" alt="image_illustration">
+<!-- Contenu général -->
+<div class="content">
+  <!-- Contenant principal du formulaire d'inscription -->
+  <div class="register__container">
+    <!-- Image -->
+    <div class="img"><img src="/assets/cuistot.jpg" alt="image_illustration"></div>
+    <!-- Formulaire d'inscription -->
+    <div class="form">
+      <a routerLink="/Home" class="logo">CANTINIÈRE</a>
+      <h4>S'inscrire</h4>
+      <form action="#">
+        <div class="input">
+          <input [(ngModel)]="inscription.name" type="name" name="name" placeholder="Nom">
         </div>
-        <div class="form">
-            <a routerLink="/Home" class="logo">CANTINIÈRE</a>
-            <h4>S'inscrire</h4>
-            <form action="#">
-                <div class="input">
-                    <input [(ngModel)]="inscription.name" type="name" name="name" placeholder="Nom">
-                </div>
-                <div class="input">
-                    <input [(ngModel)]="inscription.firstname" type="firstname" name="firstname" placeholder="Prénom">
-                </div>
-                <div class="input">
-                    <input  [(ngModel)]="inscription.email" type="email" name="email" placeholder="Adresse Email">
-                </div>
-                <div class="input">
-                    <input [(ngModel)]="inscription.password"  type="motdepasse" name="pass" placeholder="**************">
-                </div>
-                <input (click)="register()" type="submit" class="btn" value="Inscription">
-            </form>
+        <div class="input">
+          <input [(ngModel)]="inscription.firstname" type="firstname" name="firstname" placeholder="Prénom">
         </div>
+        <div class="input">
+          <input [(ngModel)]="inscription.email" type="email" name="email" placeholder="Adresse e-mail">
+        </div>
+        <div class="input">
+          <input [(ngModel)]="inscription.password" type="password" name="pass" placeholder="Mot de passe">
+        </div>
+        <input (click)="register()" type="submit" class="register__button" value="Inscription">
+      </form>
     </div>
-    
+  </div>
 </div>

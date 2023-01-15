@@ -25,13 +25,5 @@ export class AppComponent {
   constructor( private menuService : MenuService, private  appelService: AppelService){}
 
   ngOnInit() : void {
-    console.log("app chargé");
-    console.log(this.menu);
-
-    
-    
-
-    
-
   }
 }

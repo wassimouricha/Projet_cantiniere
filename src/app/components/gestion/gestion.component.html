@@ -2,23 +2,9 @@
 <app-navbar></app-navbar>
 <!-- Contenu -->
 <div class="content">
-<form action="index.html" method="post">
-  <h1>Ajouter menu</h1>
-
-  <label for="name">Nom du menu:</label>
-  <input type="text" id="name" name="menu_name" />
-  <label for="price">Prix:</label>
-  <input type="number" id="price" name="menu_price" />
-
-  <button type="submit">Confirmer</button>
-</form>
-
-<form action="index.html" method="post">
-    <h1>Supprimer menu</h1>
-  
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="menu_id" />
-  
-    <button type="submit">Confirmer</button>
+  <form>
+    <label>Name: <input [(ngModel)]="name" name="name"></label>
+    <label>Price: <input [(ngModel)]="price" name="price"></label>
+    <button (click)="updateMenu('1')">Modifier</button>
   </form>
 </div>
