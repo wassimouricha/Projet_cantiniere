@@ -29,9 +29,7 @@ export class cartService {
     const panier : any =  JSON.parse(localStorage.getItem("cart_items")) || [];
     console.log(panier.length);
    for(let i = 0; i <= panier.length ; i++){
-    console.log("hehehe");
     if(panier[i].id === menu.id){
-      console.log("hohohoh");
         panier.splice(i,1);
      
         
@@ -49,9 +47,6 @@ export class cartService {
         total += totalPanier.priceDF
         
       }
-      console.log(total);
-      console.log("test");
-      
       return total
   }
 }
