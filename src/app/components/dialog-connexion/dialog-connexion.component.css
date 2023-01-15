@@ -1,21 +1,38 @@
-/* style du dialog */
-.mat-dialog-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
+
+/* General CSS */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  background: #eaeff4;
 }
 
-.mat-dialog-content {
-  overflow: unset;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* Div contenant le bouton close */
+.close { display: flex; justify-content: flex-end; }
+
+/* Bouton close */
+.close .btn__close {
+  font-size: 1.8em;
+  transition: 0.3s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.radio_dialog {
+/* Hover pour changer la couleur du bouton close */
+.close .btn__close:hover { color: rgb(110, 110, 110); }
+
+/* Titre du modal */
+.mat-dialog-title { display: flex; align-items: center; justify-content: center; font-size: 30px; }
+
+/* Contenu général du modal */
+.content__dialog {
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -23,48 +40,11 @@
   justify-content: space-between;
 }
 
-.labelradio {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  text-align: center;
-  margin: 5px;
-}
+/* Contenant des inputs */
+.input__dialog { display: flex; justify-content: center; }
 
-.souslabelradio {
-  justify-content: center;
-  margin: 5px;
-}
-
-.typechoice {
-  margin: 5px;
-}
-
-.input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 15px;
-}
-
-.radioselect {
-  display: flex;
-  justify-content: center;
-}
-
-/* webkit pour stylisé le placeholder dans l'input */
-::-webkit-input-placeholder {
-  text-align: center;
-}
-
-.bottomdialog {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Inputs */
-.radio_dialog .input {
+/* Inputs du formulaire */
+.content__dialog .input {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -78,19 +58,14 @@
   outline: none;
 }
 
-/* button */
-.close {
-  display: flex;
-  justify-content: flex-end;
-}
-.close .btn-read {
-    font-size: 1.8em;
-    transition: 0.3s;
-}
-.close .btn-read:hover {
-    color: rgb(110, 110, 110);
-}
-.btn-read {
+/* webkit pour stylisé le placeholder dans l'input */
+::-webkit-input-placeholder { text-align: center; }
+
+/* Contenant des boutons pour s'inscrire, se connecter et mot de passe oublié */
+.sign__button-container { display: flex; justify-content: space-between; }
+
+/* Boutons pour s'inscrire etc. */
+.sign__buttons {
   position: relative;
   font-family: "Poppins";
   font-size: 1em;
@@ -102,7 +77,8 @@
   font-weight: 500;
   cursor: pointer;
 }
-.btn--animated::before {
+/* Ligne orange en-dessous des boutons */
+.sign__buttons::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -113,254 +89,21 @@
   transition: transform 0.3s ease-in-out;
   transform-origin: right;
 }
-.btn--animated:hover:not(.close .btn-read):before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
 
-/* .btn--animated:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffb827;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out;
-    z-index: -1;
-}
+/* Hover pour animer la ligne orange en-dessous des boutons */
+.sign__buttons:hover:not(.close .btn-read):before { transform: scaleX(1); transform-origin: left; }
 
-.btn--animated:hover {
-color: #0d0d0d;
-}
+/* Erreurs de saisies */
+.errors { color: red; }
 
-.btn--animated:hover:before {
-transform: scaleX(1);
-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-} */
-
-.form_error {
-  color: red;
-}
-
-/* media queries */
-
+/* @Medias Querries */
 @media screen and (max-width: 800px) {
-  .radio_dialog {
-    flex-direction: column;
-  }
+  .content__dialog { flex-direction: column; }
 }
-
 @media screen and (max-width: 510px) {
-  .bottomdialog {
-    justify-content: center;
-  }
+  .sign__button { justify-content: center; }
 }
-
 @media screen and (max-width: 360px) {
-  .bottomdialog {
-    flex-direction: column;
-  }
-
-  .btn-read {
-    margin-bottom: 10px;
-  }
-}
-
-/* NEW FORM LOGIN */
-/* * * * * General CSS * * * * */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #666666;
-  background: #eaeff4;
-}
-
-.wrapper {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1140px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: flex;
-  background: #ffffff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, .1);
-}
-
-.credit {
-  position: relative;
-  margin: 25px auto 0 auto;
-  width: 100%;
-  text-align: center;
-  color: #666666;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.credit a {
-  color: #222222;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* * * * * Login Form CSS * * * * */
-h2 {
-  margin: 0 0 15px 0;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-h2 img {
-  width: 120px;
-}
-
-p {
-  margin: 0 0 20px 0;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 7px 20px;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  border-radius: 5px;
-  color: #ffffff;
-  outline: none;
-  border: 1px solid #ffffff;
-  transition: .3s;
-  -webkit-transition: .3s;
-}
-
-.btn:hover {
-  color: #4CAF50;
-  background: #ffffff;
-}
-
-.col-left,
-.col-right {
-  width: 55%;
-  padding: 45px 35px;
-  display: flex;
-}
-
-.col-left {
-  width: 45%;
-  background: #4CAF50;
-  -webkit-clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
-  clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
-}
-
-@media(max-width: 575.98px) {
-  .container {
-    flex-direction: column;
-    box-shadow: none;
-  }
-
-  .col-left,
-  .col-right {
-    width: 100%;
-    margin: 0;
-    padding: 30px;
-    -webkit-clip-path: none;
-    clip-path: none;
-  }
-}
-
-.login-text {
-  position: relative;
-  width: 100%;
-  color: #ffffff;
-  text-align: center;
-}
-
-.login-form {
-  position: relative;
-  width: 100%;
-  color: #666666;
-}
-
-.login-form p:last-child {
-  margin: 0;
-}
-
-.login-form p a {
-  color: #4CAF50;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.login-form p:last-child a:last-child {
-  float: right;
-}
-
-.login-form label {
-  display: block;
-  width: 100%;
-  margin-bottom: 2px;
-  letter-spacing: .5px;
-}
-
-.login-form p:last-child label {
-  width: 60%;
-  float: left;
-}
-
-.login-form label span {
-  color: #ff574e;
-  padding-left: 2px;
-}
-
-.login-form input {
-  display: block;
-  width: 100%;
-  height: 40px;
-  padding: 0 10px;
-  font-size: 16px;
-  letter-spacing: 1px;
-  outline: none;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-}
-
-.login-form input:focus {
-  border-color: #ff574e;
-}
-
-.login-form input.btn {
-  color: #ffffff;
-  background: #4CAF50;
-  border-color: #4CAF50;
-  outline: none;
-  cursor: pointer;
-}
-
-.login-form input.btn:hover {
-  color: #4CAF50;
-  background: #ffffff;
+  .sign__button { flex-direction: column; }
+  .btn-read { margin-bottom: 10px; }
 }

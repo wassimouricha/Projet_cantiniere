@@ -9,7 +9,7 @@ import { TokenService } from 'src/app/services/token.service';
 @Component({
   selector: 'app-dialog-connexion',
   templateUrl: './dialog-connexion.component.html',
-  styleUrls: ['./dialog-connexion.component.css']
+  styleUrls: ['./dialog-connexion.component.css'],
 })
 export class DialogConnexionComponent implements OnInit {
   close = faClose;
@@ -17,37 +17,27 @@ export class DialogConnexionComponent implements OnInit {
   // any car pas de type
   form: Login = {
     email: '',
-    password: ''
-  }
+    password: '',
+  };
 
-  constructor(@Inject(MAT_DIALOG_DATA) 
-  public data: any , 
-  private http: HttpClient, 
-  private authService : AuthService , 
-  private matDialog : MatDialog , 
-  private tokenService : TokenService) { 
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: any,
+    private http: HttpClient,
+    private authService: AuthService,
+    private matDialog: MatDialog,
+    private tokenService: TokenService
+  ) {}
+  ngOnInit(): void {}
 
-
-  }
-
-
-
-  ngOnInit(): void {
-  }
-
-// fonction pour se connecter a l'api
+  // fonction pour se connecter a l'api
   onSubmit(): void {
-      this.authService.login(this.form).subscribe(
-        data => {
-          console.log(data.headers.get('Authorization'));
-          //@ts-ignore
-        this.tokenService.saveToken(data.headers.get('Authorization'))
-        }
-      )
-        // fermer la boite de dialog
-         this.matDialog.closeAll();
+    this.authService.login(this.form).subscribe((data) => {
+      console.log(data.headers.get('Authorization'));
+      //@ts-ignore
+      this.tokenService.saveToken(data.headers.get('Authorization'));
+    });
+    // fermer la boite de dialog
+    this.matDialog.closeAll();
   }
-
-  
-
 }
