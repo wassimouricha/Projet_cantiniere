@@ -12,7 +12,7 @@ export class CarteContenuComponent implements OnInit {
   @Input() carte!: Carte;
 
   constructor( private carteService : CarteService) {
-    console.log("constructeur");
+    // console.log("constructeur");
    }
 
   ngOnInit(): void {

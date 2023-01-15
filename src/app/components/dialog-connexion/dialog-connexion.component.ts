@@ -31,7 +31,7 @@ export class DialogConnexionComponent implements OnInit {
   // Fonction permettant de se connecter à l'API
   onSubmit(): void {
     this.authService.login(this.form).subscribe((data) => {
-      console.log(data.headers.get('Authorization'));
+      // console.log(data.headers.get('Authorization'));
       //@ts-ignore
       this.tokenService.saveToken(data.headers.get('Authorization'));
     });

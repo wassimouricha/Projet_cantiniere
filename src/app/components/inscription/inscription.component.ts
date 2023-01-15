@@ -23,7 +23,7 @@ export class InscriptionComponent implements OnInit {
 
   register() {
     this.authService.register(this.inscription).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.router.navigate(['Home']);
     });
   }

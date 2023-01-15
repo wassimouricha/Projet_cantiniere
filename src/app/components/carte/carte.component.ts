@@ -20,7 +20,7 @@ export class CarteComponent implements OnInit {
   ];
 
   constructor( private carteService : CarteService) {
-    console.log("constructeur");
+    // console.log("constructeur");
    }
 
   ngOnInit(): void {

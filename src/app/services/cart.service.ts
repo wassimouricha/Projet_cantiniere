@@ -27,7 +27,7 @@ export class cartService {
   removeArticleFromCart(menu: any){
     //@ts-ignore
     const panier : any =  JSON.parse(localStorage.getItem("cart_items")) || [];
-    console.log(panier.length);
+    // console.log(panier.length);
    for(let i = 0; i <= panier.length ; i++){
     if(panier[i].id === menu.id){
         panier.splice(i,1);

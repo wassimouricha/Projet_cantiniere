@@ -53,7 +53,7 @@ export class CardweekComponent implements OnInit {
               menu.image = `http://localhost:8080/stone.lunchtime/${imageForAMeal.imagePath}`
             });
           });
-          console.log(menuForAday);
+          // console.log(menuForAday);
           
           const mealsPerDay = this.groupByDay(menuForAday);
           this.mealsPerDay=[...mealsPerDay];
@@ -66,14 +66,14 @@ export class CardweekComponent implements OnInit {
      * pour chaques repas de chaques jour  de la semaine on attribue un menu et un jour
      */
     groupByDay(items: Menu[]): AllMealsForTheWeek[] {
-      console.log("items",items.filter((item: Menu) => item.day === 'lundi'));
+      // console.log("items",items.filter((item: Menu) => item.day === 'lundi'));
       
       const lundiMeal: Menu[] = items.filter((item: Menu) => item.day === 'lundi')
       const mardiMeal: Menu[] = items.filter((item: Menu) => item.day === 'mardi')
       const mercrediMeal: Menu[] = items.filter((item: Menu) => item.day === 'mercredi')
       const jeudiMeal: Menu[] = items.filter((item: Menu) => item.day === 'jeudi')
       const vendrediMeal: Menu[] = items.filter((item: Menu) => item.day === 'vendredi')
-      console.log("lundi",lundiMeal);
+      // console.log("lundi",lundiMeal);
       
       const mealsPerDay: AllMealsForTheWeek[] = [
         {
@@ -102,7 +102,7 @@ export class CardweekComponent implements OnInit {
           meals: vendrediMeal
         }
       ]
-      console.log(mealsPerDay);
+      // console.log(mealsPerDay);
       
       return mealsPerDay
     } 
