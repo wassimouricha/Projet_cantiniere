@@ -13,8 +13,6 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class DialogConnexionComponent implements OnInit {
   close = faClose;
-
-  // any car pas de type
   form: Login = {
     email: '',
     password: '',
@@ -30,14 +28,14 @@ export class DialogConnexionComponent implements OnInit {
   ) {}
   ngOnInit(): void {}
 
-  // fonction pour se connecter a l'api
+  // Fonction permettant de se connecter à l'API
   onSubmit(): void {
     this.authService.login(this.form).subscribe((data) => {
       console.log(data.headers.get('Authorization'));
       //@ts-ignore
       this.tokenService.saveToken(data.headers.get('Authorization'));
     });
-    // fermer la boite de dialog
+    // Fermer la boite de dialog
     this.matDialog.closeAll();
   }
 }
