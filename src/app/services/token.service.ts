@@ -2,38 +2,47 @@ import { Injectable } from '@angular/core';
 import jwtDecode from 'jwt-decode';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenService {
+  constructor() {}
 
-  constructor() { 
-
-
+  /**
+   * Cette fonction prend une chaîne de caractères comme argument et l'enregistre dans le stockage local.
+   * @param {string} token - Le jeton que vous voulez sauvegarder.
+   */
+  saveToken(token: string) {
+    localStorage.setItem('token', token);
   }
 
-  saveToken(token : string){
-    localStorage.setItem('token', token)
-
-  }
-  isLogged(){
-    const savedToken =  localStorage.getItem('token');
-    //  !! transforme la variable en booleen
-    return !! savedToken
-
+  /**
+   * S'il existe un jeton dans le stockage local, retournez true, sinon retournez false.
+   * @returns Une valeur booléenne.
+   */
+  isLogged() {
+    const savedToken = localStorage.getItem('token');
+    return !!savedToken;
   }
 
-  getUserInfo(){
-    const savedToken =  localStorage.getItem('token');
+  /**
+   * Cette fonction vérifie si le jeton est enregistré dans le stockage local, si c'est le cas, il décode 
+   * le jeton et renvoie l'objet utilisateur.
+   */
+  getUserInfo() {
+    const savedToken = localStorage.getItem('token');
 
-    if(savedToken != null){
-          const infoDecode : any = jwtDecode(savedToken);
+    if (savedToken != null) {
+      const infoDecode: any = jwtDecode(savedToken);
 
-          return infoDecode.user
-    } return false
+      return infoDecode.user;
+    }
+    return false;
   }
 
-  logout(){
+  /**
+   * La fonction de déconnexion supprime le jeton du stockage local.
+   */
+  logout() {
     localStorage.removeItem('token');
   }
-
 }

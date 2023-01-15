@@ -8,10 +8,5 @@ import { Observable } from 'rxjs';
 })
 export class AppelService {
 
-
-
   constructor(private httpClient :HttpClient) { }
-
-
-
 }

@@ -9,6 +9,7 @@ import { CarteService } from 'src/app/modal/carte/carte.service';
 })
 export class CarteComponent implements OnInit {
 
+  /* Carte[] est un tableau d'objets. */
   carte: Carte[] = [
     {
       title: "string",
@@ -20,7 +21,6 @@ export class CarteComponent implements OnInit {
   ];
 
   constructor( private carteService : CarteService) {
-    // console.log("constructeur");
    }
 
   ngOnInit(): void {

@@ -12,7 +12,9 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./dialog-connexion.component.css'],
 })
 export class DialogConnexionComponent implements OnInit {
+  /* Icon font awesome */
   close = faClose;
+  /* Un objet de formulaire qui est utilisé pour stocker l'email et le mot de passe de l'utilisateur. */
   form: Login = {
     email: '',
     password: '',
@@ -28,14 +30,16 @@ export class DialogConnexionComponent implements OnInit {
   ) {}
   ngOnInit(): void {}
 
-  // Fonction permettant de se connecter à l'API
+  /**
+   * La fonction est appelée lorsque l'utilisateur clique sur le bouton d'envoi du formulaire de connexion.
+   * La fonction appelle alors la fonction de connexion dans le authService, qui renvoie un observable.
+   * La fonction s'abonne ensuite à l'observable et enregistre le jeton renvoyé par le serveur dans le stockage local.
+   */
   onSubmit(): void {
     this.authService.login(this.form).subscribe((data) => {
-      // console.log(data.headers.get('Authorization'));
       //@ts-ignore
       this.tokenService.saveToken(data.headers.get('Authorization'));
     });
-    // Fermer la boite de dialog
     this.matDialog.closeAll();
   }
 }

@@ -17,12 +17,15 @@ declare function togglebutton(): any;
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  // Variables pour les icons Font Awesome
+  /* Importer des icônes depuis Font Awesome. */
   bars = faBars;
   cart = faCartShopping;
   trash = faTrash;
   close = faClose;
 
+  /**
+   * Déclarer les variables firstname et panier et les initialiser à des chaînes vides (firstname) et des tableaux vides (panier).
+   */
   firstname = '';
   panier = [];
 
@@ -32,7 +35,9 @@ export class NavbarComponent implements OnInit {
     protected cartService: cartService
   ) {}
 
-  // Fonction pour ouvrir le modal de Connexion
+  /**
+   * La fonction openDialog() ouvre une boîte de dialogue avec le composant DialogConnexionComponent.
+   */
   openDialog() {
     const dialogRef = this.dialog.open(DialogConnexionComponent, {
       data: { title: 'Connexion' },
@@ -43,7 +48,10 @@ export class NavbarComponent implements OnInit {
       .subscribe((result) => console.log('dialog result', result));
   }
 
-  // Fonction pour ouvrir le panier
+  /**
+   * Lorsque l'on clique sur l'icône du panier, on ajoute la classe "active" à l'élément panier,
+   * et lorsque que l'on clique sur l'icône de fermeture du panier, on supprime la classe "active" de l'élément panier.
+   */
   openCart() {
     const cartIcon = document.querySelector('.cart-icon');
     const cart = document.querySelector('.cart');
@@ -58,11 +66,18 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  // Fonction pour supprimer un menu du panier
+  /**
+   * Cette fonction prend un objet menu comme paramètre et appelle la fonction removeArticleFromCart du cartService.
+   * @param {any} menu - any
+   */
   deleteMenuFromCart(menu: any) {
     this.cartService.removeArticleFromCart(menu);
   }
 
+  /**
+   * Lorsque le composant est initialisé, la fonction togglebutton est appelée, et les variables firstname et panier sont affectées
+   * aux valeurs firstname et panier provenant respectivement du tokenService et du cartService.
+   */
   ngOnInit(): void {
     togglebutton();
     (this.firstname = this.tokenService.getUserInfo().firstname),
