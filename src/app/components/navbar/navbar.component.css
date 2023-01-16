@@ -305,3 +305,12 @@ body {
     width: 300px;
   }
 }
+
+@media screen and (max-width: 1590px) {
+  .btn--animated::before {
+    display: none;
+  }
+  .btn--animated:hover {
+    color: #ffb827;
+  }
+}
