@@ -13,8 +13,10 @@ export class cartService {
    */
   addArticleToCart(menu: any) {
     //@ts-ignore
+    // la méthode JSON.parse converti un string JSON en objet javascript   
     const panier: any = JSON.parse(localStorage.getItem('cart_items')) || [];
     panier.push(menu);
+    // la méthode JSON.stringify converti un objet javascript en string JSON
     localStorage.setItem('cart_items', JSON.stringify(panier));
   }
 
