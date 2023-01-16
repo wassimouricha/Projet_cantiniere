@@ -26,6 +26,8 @@ export class cartService {
    */
   getPanierLocalStorage() {
     //@ts-ignore
+    // getItem  permet de relire les données enregistrées dans le stockage local en utilisant la même clé. Par exemple,
+    //  pour récupérer les données stockées à l'aide du token de la clé,on va utiliser la méthode localStorage.getItem 
     const panier: any = JSON.parse(localStorage.getItem('cart_items')) || [];
     return panier;
   }
