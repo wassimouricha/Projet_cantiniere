@@ -12,6 +12,7 @@ export class GestionComponent implements OnInit {
 
   name: string;
   price: number;
+  id: number;
 
   constructor(private menuService: UpdateMenuService) { }
 
