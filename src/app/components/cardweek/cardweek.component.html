@@ -2,7 +2,7 @@
 <div class="content" *ngFor="let day of mealsPerDay">
 
   <!-- Affichage du jour de la semaine -->
-  <h2 class="meal__day"><a (click)="openDialog()">{{day.name}}</a></h2>
+  <h2 class="meal__day"><a >{{day.name}}</a></h2>
   <div class="card__container">
     <!-- Carte pour chaque menu -->
     <div class="meal__card" *ngFor="let meal of day.meals">
