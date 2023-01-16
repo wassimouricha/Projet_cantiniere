@@ -70,3 +70,13 @@ hr { width: 100%; border: 1px solid rgba(0, 0, 0, 0.158); }
 
 /* Hover pour animer la flèche */
 .meal__card .meal__card-arrow:hover svg { transform: translateX(3px); }
+
+
+
+
+/* @Medias Querries */
+@media screen and (max-width: 600px) {
+  .card__container{
+    flex-direction: column;
+  }
+}
